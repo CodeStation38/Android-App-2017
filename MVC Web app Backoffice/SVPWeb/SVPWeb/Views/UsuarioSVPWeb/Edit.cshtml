@@ -1,0 +1,534 @@
+﻿@model SVPWeb.Models.UsuarioSVPWeb
+
+<style>
+    fieldset.scheduler-border {
+        border: 1px groove #FF5604 !important;
+        border-radius: 6px 6px 6px 6px;
+        border-color: #FF5604;
+        background-color: #F6FCFB;
+        padding: 0 1.4em 1.4em 1.4em !important;
+        margin: 0 0 1.5em 0 !important;
+        -webkit-box-shadow: 0px 0px 0px 0px #000;
+        box-shadow: 0px 0px 0px 0px #000;
+    }
+
+    legend.scheduler-border {
+        color: #FF5604;
+        font-size: 1.2em !important;
+        font-weight: bold !important;
+        text-align: left !important;
+        width: auto;
+        padding: 0 10px;
+        border-bottom: none;
+    }
+</style>
+
+<div class="form-horizontal" style="border:1px solid;border-radius:6px 6px 6px 6px;border-color:#FF5604;background-color:#FDEDD2;">
+    <hr />
+    <div class="form-group" style="margin-left:25px;">
+        <label class="control-label col-md-2" style="color:#FF5604;">Numero de Legajo</label>
+        <div class="col-md-10">
+            <input class="form-control" readonly type="text" id="txtLegajo" value="@Model.NumeroLegajo" /><br />
+        </div>
+    </div>
+    <div class="form-group" style="margin-left:25px;">
+        <label class="control-label col-md-2" style="color:#FF5604;">Apellido</label>
+        <div class="col-md-10">
+            <input class="form-control" type="text" id="txtApe" placeholder="ej, Perez" value="@ViewBag.ApellidoEdicion" /><br />
+        </div>
+    </div>
+    <div class="form-group" style="margin-left:25px;">
+        <label class="control-label col-md-2" style="color:#FF5604;">Nombre</label>
+        <div class="col-md-10">
+            <input class="form-control" type="text" id="txtNom" placeholder="ej, Juan" value="@ViewBag.NombreEdicion" /><br />
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Estado, htmlAttributes: new { @class = "control-label col-md-2", @style = "color:#3C5A84" })
+        <div class="col-md-10">
+            @Html.HiddenFor(model => model.Estado, new { id = "hdnEstadoUWeb" })
+            @Html.DropDownList("selection", new List<SelectListItem>() { new SelectListItem { Text = "Seleccionar", Value = "Seleccionar" }, new SelectListItem { Text = "A", Value = "A" }, new SelectListItem { Text = "I", Value = "I" }}, new { @id = "ddlEstadoUWeb", @class = "form-control", @onchange = "guardarValorFiltro(this.value)", @style = "border-color:#337AB7" })
+        </div>
+    </div>
+
+    @*CHECKBOX RESTABLECER CONTRASENIA*@
+    <div class="form-group">
+        <label class="control-label col-md-2" style="color:#3C5A84;">Restablecer contrasenia</label>
+        <div class="col-md-10">
+            <input type="hidden" id="hdnRestablecerUWebPass">
+            @*<input type="checkbox" id="chkResetPassword" style="border-color:#337AB7;" onchange = "guardarValorCheck(this.value)">*@
+            <input type="checkbox" id="chkResetPassword" style="border-color:#337AB7;">
+        </div>
+    </div>
+
+    <div id="dvUWebPass" class="form-group" style="margin-left:25px;display:none;">
+        <label class="control-label col-md-2" style="color:#FF5604;">Contrasenia restablecida</label>
+        <div class="col-md-10">
+            <input class="form-control" readonly type="text" id="txtDefaultPass" value="12345" /><br />
+        </div>
+    </div>
+
+    <label style="margin-left:75px;color:#FF5604">Permisos de Usuario</label>
+    <div style="margin-left:230px;width:25%;">
+        <div>
+            <fieldset id="group1" style="margin-left:60px;" class="scheduler-border">
+                <legend class="scheduler-border">Incidencias</legend>
+                <label style="color:#FF5604;">Lectura</label>
+                <input type="radio" id="rbInciR" checked="@(Model.PermisosUsuario.InciR==true)" onclick="inciRCked();" />
+                <label style="color:#FF5604;">Lectura/Escritura</label>
+                <input type="radio" id="rbInciRW" checked="@(Model.PermisosUsuario.InciRW==true)" onclick="inciRWChed();" />
+            </fieldset>
+        </div>
+    </div>
+    <div style="margin-left:230px;margin-top:10px;width:25%;">
+        <div>
+            <fieldset id="group1" style="margin-left:60px;" class="scheduler-border">
+                <legend class="scheduler-border">Backend Web</legend>
+                <label style="color:#FF5604;">Lectura</label>
+                <input type="radio" id="rbWebR" checked="@(Model.PermisosUsuario.WebR==true)" onclick="webRCked();" />
+                <label style="color:#FF5604;">Lectura/Escritura</label>
+                <input type="radio" id="rbWebRW" checked="@(Model.PermisosUsuario.WebRW==true)" onclick="webRWChed();" />
+            </fieldset>
+        </div>
+    </div>
+    <div style="margin-left:230px;margin-top:10px;width:25%;">
+        <div>
+            <fieldset id="group1" style="margin-left:60px;" class="scheduler-border">
+                <legend class="scheduler-border">Backend Mobile</legend>
+                <label style="color:#FF5604;">Lectura</label>
+                <input type="radio" id="rbMobileR" checked="@(Model.PermisosUsuario.MobileR==true)" onclick="mobileRCked();" />
+                <label style="color:#FF5604;">Lectura/Escritura</label>
+                <input type="radio" id="rbMobileRW" checked="@(Model.PermisosUsuario.MobileRW==true)" onclick="mobileRWChed();" />
+            </fieldset>
+        </div>
+    </div>
+    <div style="margin-left:230px;width:25%;">
+        <div>
+            <fieldset id="group1" style="margin-left:60px;" class="scheduler-border">
+                <legend class="scheduler-border">Permisos(solo lectura)</legend>
+                <label style="color:#FF5604;">Permitir</label>
+                <input type="radio" id="rbPermisosRAllow" checked="@(Model.PermisosUsuario.GrillaPermisosR==true)" onclick="inciPermisosRAllow();" />
+                <label style="color:#FF5604;">Denegar</label>
+                <input type="radio" id="rbPermisosRDeny" checked="@(Model.PermisosUsuario.GrillaPermisosR==false)" onclick="inciPermisosRDeny();" />
+            </fieldset>
+        </div>
+    </div>
+    <div style="margin-left:230px;margin-top:10px;margin-bottom:10px;">
+        <div style="margin-top:10px;">
+            <button type="button" class="btn btn-warning" id="btnActualizarUWeb" onclick="confirmaCambios();">Guardar cambios</button>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.9/jquery-ui.js" type="text/javascript"></script>
+<script type="text/javascript">
+    jQuery(function ($) {
+        var estadofromserver = document.getElementById('hdnEstadoUWeb').value;
+        //alert('ESTADOSERVER: ' + estadofromserver);
+
+        $("#ddlEstadoUWeb > option").each(function () {
+
+            //alert('VALOR: ' + this.value + 'TEXTO: ' + this.text);
+            if (this.text == estadofromserver)
+            {
+                $("#ddlEstadoUWeb").val(this.value);
+            }
+        });
+
+    });
+
+    function guardarValorFiltro(valor)
+    {
+        if (valor != "Seleccionar")
+        {
+            document.getElementById("hdnEstadoUWeb").value = valor;
+        }
+        return false;
+    }
+
+    //*** ACEPTAR TECLA ENTER COMO CLICK
+    //$("#btnActualizarUWeb").keyup(function(event){
+    //    if(event.keyCode == 13){
+    //        // $("#btnActualizarUWeb").click();
+    //        //alert('TECLA ENTER!');
+    //    }
+    //});
+
+
+
+
+
+
+    //*** PERMISOS INCIDENCIAS
+    function inciRCked() {
+        $(rbInciRW).prop('checked', false);
+    }
+
+    function inciRWChed() {
+        $(rbInciR).prop('checked', false);
+    }
+    //*** FIN PERMISOS INCIDENCIAS
+
+
+
+    //*** PERMISOS WEB
+    function webRCked() {
+        $(rbWebRW).prop('checked', false);
+    }
+
+    function webRWChed() {
+        $(rbWebR).prop('checked', false);
+    }
+    //*** FIN PERMISOS WEB
+
+
+
+    //*** PERMISOS MOBILE
+    function mobileRCked() {
+        $(rbMobileRW).prop('checked', false);
+    }
+
+    function mobileRWChed() {
+        $(rbMobileR).prop('checked', false);
+    }
+    //*** FIN PERMISOS MOBILE
+
+    function confirmaCambios()
+    {
+        if(confirm("Revise sus cambios antes de continuar. Confirma estos cambios?"))
+        {
+            ValidaEdicionUWeb();
+        }
+        //else
+        //{
+        //    alert("CONTINUE EDITANDO...");
+        //}
+    }
+
+
+
+    function ValidaEdicionUWeb()
+    {
+
+        var strinvalidfields = '';
+        var surnameHasValidValue= false;
+        var nameHasValidValue= false;
+        //surnameHasValidValue
+        var legajoHasValidValue = false;
+        var estadoUserWebHasValidValue = false;
+        //var seleccionddl = document.getElementById("hdnEstadoUWeb").value;
+
+
+        //VERIFICA LEGAJO
+        var legajoVal = document.getElementById('txtLegajo').value;
+
+        if (!legajoVal.match(/\S/)) {
+            //alert ('Empty value is not allowed');
+            legajoHasValidValue = false;
+            strinvalidfields = strinvalidfields + 'Ingrese un Legajo valido. \n\r';
+        } else {
+            legajoHasValidValue = true;
+        }
+
+        //VERIFICA APELLIDO
+        var apellidoVal = document.getElementById('txtApe').value;
+        //alert("APENOM: " + apellidoVal);
+        if (!apellidoVal.match(/\S/)) {
+            // && apellidoVal!="" && apellidoVal!=null
+            //alert ('Empty value is not allowed');
+            surnameHasValidValue = false;
+            strinvalidfields = strinvalidfields + 'Ingrese un Apellido valido. \n\r';
+
+        }
+        else
+        {
+            //alert('APENOM IS VALID!');
+            surnameHasValidValue = true;
+        }
+
+
+        //VERIFICA NOMBRE
+        var nomVal = document.getElementById('txtNom').value;
+        //alert("APENOM: " + apellidoVal);
+        if (!nomVal.match(/\S/)) {
+            // && apellidoVal!="" && apellidoVal!=null
+            //alert ('Empty value is not allowed');
+            nameHasValidValue = false;
+            strinvalidfields = strinvalidfields + 'Ingrese un Nombre valido. \n\r';
+
+        }
+        else
+        {
+            //alert('APENOM IS VALID!');
+            nameHasValidValue = true;
+        }
+
+
+
+        //VERIFICA SI SELECCIONO UNA OPCION DEL COMBO, QUE NO SEA "SELECCIONAR"
+        var seleccionddl = document.getElementById('ddlEstadoUWeb').value;
+        if (seleccionddl == "Seleccionar")
+        {
+            //alert ('DEBE SELECCIONAR UNA OPCION');
+            estadoUserWebHasValidValue = false;
+            strinvalidfields = strinvalidfields + 'Seleccione un estado valido, para este usuario Web. \n\r';
+
+        }
+        else
+        {
+            estadoUserWebHasValidValue = true;
+        }
+
+        if (nameHasValidValue && surnameHasValidValue && legajoHasValidValue && estadoUserWebHasValidValue)
+        {
+            actualizarPermisosUWeb();
+        }
+        else
+        {
+            alert('Por favor, revise los datos ingresados: \n\r' + strinvalidfields);
+        }
+
+    }
+
+
+
+    function actualizarPermisosUWeb()
+    {
+
+        var IDUWeb=@Model.Id;
+        var idPermisos = @Model.IdPermisos;
+        var validalegajo=false;
+        var msgerrorlegajo=""
+        var validaapenom=false;
+        var msgerrorapenom="";
+
+        var url = '';
+
+        var nuevoestadoInciR =  detnuevoestadpInciR();
+        var nuevoestadoInciRW =  detnuevoestadpInciRW();
+        var nuevoestadoWebR =  detnuevoestadpWebR();
+        var nuevoestadoWebRW =  detnuevoestadpWebRW();
+        var nuevoestadoMobileR =  detnuevoestadpMobileR();
+        var nuevoestadoMobileRW =  detnuevoestadpMobileRW();
+        var nuevoestadoGrillaPermisosR =  detnuevoestadpGrillaPermisosR();
+
+        UsuarioSVPWeb = {}
+        PermisosUsuario= {}
+
+        url = "/UsuarioSVPWeb/SaveUpdate";
+
+        UsuarioSVPWeb["Id"] = IDUWeb;
+        UsuarioSVPWeb["NumeroLegajo"] = $('#txtLegajo').val();
+        UsuarioSVPWeb["NombreApellido"] = $('#txtApe').val() + "," + $('#txtNom').val();
+
+        //IF dvUWebPass VISIBLE => UsuarioSVPWeb["Contrasenia"]="12345";
+        //if($('#dvUWebPass').is(':visible')) {
+        //    UsuarioSVPWeb["Contrasenia"]="12345";
+        //}
+        //document.getElementById("hdnRestablecerUWebPass").value
+        //
+        //alert('NUEVA PASS:' + document.getElementById("hdnRestablecerUWebPass").value)
+        UsuarioSVPWeb["Contrasenia"]=document.getElementById("hdnRestablecerUWebPass").value;
+        UsuarioSVPWeb["Estado"] = document.getElementById('hdnEstadoUWeb').value;
+
+
+        UsuarioSVPWeb["IdPermisos"] = idPermisos;
+
+        PermisosUsuario["Id"]=idPermisos;
+        PermisosUsuario["NLegajoUsuario"]=$('#txtLegajo').val();
+        PermisosUsuario["InciR"]=nuevoestadoInciR;
+        PermisosUsuario["InciRW"]=nuevoestadoInciRW;
+        PermisosUsuario["WebR"]=nuevoestadoWebR;
+        PermisosUsuario["WebRW"]=nuevoestadoWebRW;
+        PermisosUsuario["MobileR"]=nuevoestadoMobileR;
+        PermisosUsuario["MobileRW"]=nuevoestadoMobileRW;
+        //nuevoestadoGrillaPermisosR
+        PermisosUsuario["GrillaPermisosR"]=nuevoestadoMobileRW;
+
+        $.ajax({
+            url: url,
+            data: JSON.stringify({ _UsuarioSVPWeb: UsuarioSVPWeb, _PermisosUsuario:PermisosUsuario }),
+            type: "POST",
+            traditional: true,
+            contentType: "application/json; charset=utf-8",
+            cache: false,
+            dataType: "json",
+            success: function (result, status, xhr) {
+
+                var resultFromServer = xhr.getResponseHeader("JSonEdUWebResultado");
+
+                var str_array = resultFromServer.split('~');
+                var carriagesrettest = "";
+
+                for(var i = 0; i < str_array.length; i++)
+                {
+                    carriagesrettest = carriagesrettest + "\n\r" + str_array[i].replace(/^\s*/, "").replace(/\s*$/, "");
+                }
+
+                alert(carriagesrettest);
+                window.location.reload();
+                $("#dialog2").dialog('close');
+
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                alert('Error inesperado al guardar: ' + textStatus + " .Detalles: " + errorThrown);
+            }
+        });
+
+    }
+
+
+    $('#chkResetPassword').change(function(){
+        if($(this).prop("checked"))
+        {
+            var passfromserver = "@Model.Contrasenia";
+            //alert('passfromserver: ' + passfromserver);
+            if(passfromserver!="12345")
+            {
+                //alert('passfromserver: ' + passfromserver);
+                $('#dvUWebPass').show();
+                //hdnRestablecerUWebPass
+                document.getElementById("hdnRestablecerUWebPass").value = "12345";
+                //alert('NUEVA PASS:' + document.getElementById("hdnRestablecerUWebPass").value);
+
+            }
+            else
+            {
+                alert("La contrasenia por defecto (12345), ya esta establecida.");
+                document.getElementById("hdnRestablecerUWebPass").value = "@Model.Contrasenia";
+                //alert('NUEVA PASS:' + document.getElementById("hdnRestablecerUWebPass").value);
+            }
+
+
+        }
+        else
+        {
+            //alert('passfromserver: ' + passfromserver);
+            $('#dvUWebPass').hide();
+            //hdnRestablecerUWebPass
+            document.getElementById("hdnRestablecerUWebPass").value = "@Model.Contrasenia";
+            //alert('NUEVA PASS:' + document.getElementById("hdnRestablecerUWebPass").value);
+        }
+    });
+
+
+    //DETERMINAR NUEVOS PERMISOS SELECCIONADOS
+    //PERMISOS USUARIOWEB
+    function detnuevoestadpInciR()
+    {
+        var nuevopermisoInciR;
+        if ($("input:radio[id=rbInciR]").is(":checked"))
+        {
+            nuevopermisoInciR = true;
+        }
+        else
+        {
+            nuevopermisoInciR = false;
+        }
+        return nuevopermisoInciR;
+    }
+
+    function detnuevoestadpInciRW() {
+        var nuevopermisoInciRW;
+        if ($("input:radio[id=rbInciRW]").is(":checked")) {
+            nuevopermisoInciRW = true;
+        }
+        else {
+            nuevopermisoInciRW = false;
+        }
+        return nuevopermisoInciRW;
+    }
+
+    function detnuevoestadpWebR() {
+        var nuevopermisoWebR;
+        if ($("input:radio[id=rbWebR]").is(":checked")) {
+            nuevopermisoWebR = true;
+        }
+        else {
+            nuevopermisoWebR = false;
+        }
+        return nuevopermisoWebR;
+    }
+
+    function detnuevoestadpWebRW() {
+        var nuevopermisoWebRW;
+        if ($("input:radio[id=rbWebRW]").is(":checked")) {
+            nuevopermisoWebRW = true;
+        }
+        else {
+            nuevopermisoWebRW = false;
+        }
+        return nuevopermisoWebRW;
+    }
+
+    function detnuevoestadpMobileR() {
+        var nuevopermisoMobileR;
+        if ($("input:radio[id=rbMobileR]").is(":checked")) {
+            nuevopermisoMobileR = true;
+        }
+        else {
+            nuevopermisoMobileR = false;
+        }
+        return nuevopermisoMobileR;
+    }
+
+    function detnuevoestadpMobileRW() {
+        var nuevopermisoMobileRW;
+        if ($("input:radio[id=rbMobileRW]").is(":checked")) {
+            nuevopermisoMobileRW = true;
+        }
+        else {
+            nuevopermisoMobileRW = false;
+        }
+        return nuevopermisoMobileRW;
+    }
+
+
+    //detnuevoestadpGrillaPermisosR
+    function detnuevoestadpGrillaPermisosR()
+    {
+        var nuevopermisoPermisosRAllow;
+        if ($("input:radio[id=rbPermisosRAllow]").is(":checked"))
+        {
+            nuevopermisoPermisosRAllow = true;
+        }
+        else
+        {
+            if ($("input:radio[id=rbPermisosRDeny]").is(":checked"))
+            {
+                nuevopermisoPermisosRAllow = false;
+            }
+        }
+        return nuevopermisoPermisosRAllow;
+    }
+
+
+
+    //function inciPermisosRDeny() {
+    //    var nuevopermisoPermisosRDeny;
+    //    if ($("input:radio[id=rbPermisosRDeny]").is(":checked")) {
+    //        nuevopermisoPermisosRDeny = true;
+    //    }
+    //    else {
+    //        nuevopermisoPermisosRDeny = false;
+    //    }
+    //    return nuevopermisoPermisosRDeny;
+    //}
+
+    function inciPermisosRAllow() {
+        document.getElementById("rbPermisosRAllow").checked = true;
+        document.getElementById("rbPermisosRDeny").checked = false;
+    }
+
+    function inciPermisosRDeny() {
+        document.getElementById("rbPermisosRAllow").checked = false;
+        document.getElementById("rbPermisosRDeny").checked = true;
+    }
+
+</script> 

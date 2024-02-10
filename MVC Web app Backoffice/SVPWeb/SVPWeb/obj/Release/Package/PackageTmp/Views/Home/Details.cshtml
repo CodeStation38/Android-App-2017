@@ -1,0 +1,315 @@
+﻿@model SVPWeb.Models.UsuarioSVPWebIncidencia
+
+<style>
+    .ui-widget-header {
+        border: 1px solid #33CCFF;
+        /*background: #3276B1 50% 50% repeat-x;*/
+        background: #71A94A 50% 50% repeat-x;
+        color: #ffffff;
+        font-weight: bold;
+    }
+
+    input{
+       border:1px solid;
+       border-color:green;
+       border-radius:4px;
+       color:royalblue;
+       padding-left: 2px;
+    }
+    
+    textarea{
+       border:1px solid;
+       border-color:green;
+       border-radius:4px;
+       color:royalblue;
+       padding-left: 2px;
+    }
+
+    label{
+          color:green;
+    }
+
+    input[type='radio']:after {
+        width: 15px;
+        height: 15px;
+        border-radius: 15px;
+        top: -2px;
+        left: -1px;
+        position: relative;
+        background-color: #d1d3d1;
+        content: '';
+        display: inline-block;
+        visibility: visible;
+        border: 2px solid white;
+    }
+
+    input[type='radio']:checked:after {
+        width: 15px;
+        height: 15px;
+        border-radius: 15px;
+        top: -2px;
+        left: -1px;
+        position: relative;
+        background-color: royalblue;
+        content: '';
+        display: inline-block;
+        visibility: visible;
+        border: 2px solid white;
+    }
+
+</style>
+<div>
+
+    @{
+        List<string> listarutas = new List<string>();
+
+        //Cada string contiene un valor compuesto: "ruta~thumbnail"
+        listarutas = (List<string>)ViewBag.ListFotos;
+
+        foreach (string ruta in listarutas)
+        {
+            if (!string.IsNullOrEmpty(ruta))
+            {
+                if (ruta != "|")
+                {
+                    //Split string en @foto y @thumbnail
+                    string[] strArray = ruta.Split('|');
+                    var foto = strArray[0];
+                    var thumbnail = strArray[1];
+                    <a class="example-image-link" href="@Url.Content(String.Format("{0}", foto))" data-lightbox="example-set">
+                        <img class="example-image" src="@Url.Content(String.Format("{0}", thumbnail))" />
+                    </a>
+                }
+
+            }
+        }
+    }
+
+
+</div>
+<table id="barraInfoUMovil" cellpadding="0" cellspacing="0" width="580" style="margin-top:5px;">
+    <tr>
+        <th>Informacion del Usuario Movil</th>
+    </tr>
+</table>
+<div id="dvInfoUMovil">
+    <div>
+        <label style="font-weight:normal;font-style:normal;font-size:12px;">Numero de Legajo: </label><br />
+        <input type="text" id="txtLegajo" readonly value="@Model.Incidencia.NlegajoUMobile" /><br />
+    </div>
+    <div>
+        <label style="font-weight:normal;font-style:normal;font-size:12px;">Observaciones Usuario Movil: </label><br />
+        <textarea id="txtObsMobile" rows="3" readonly style="resize: none;">@Model.Incidencia.ObsMobile</textarea><br />
+    </div>
+    <div>
+        <label style="font-weight:normal;font-style:normal;font-size:12px;">GPS Latitud: </label><br />
+        <input type="text" id="txtGPSlat" readonly value="@Model.Incidencia.GPSLat" /><br />
+    </div>
+    <div>
+        <label style="font-weight:normal;font-style:normal;font-size:12px;">GPS Longitud: </label><br />
+        <input type="text" id="txtGPSlon" readonly value="@Model.Incidencia.GPSLon" /><br />
+    </div>
+</div>
+
+<table id="barraAcciones" cellpadding="0" cellspacing="0" width="580" style="margin-top:5px;">
+    <tr>
+        <th>Acciones</th>
+    </tr>
+</table>
+<div style="width:350px;margin-top:4px;">
+
+
+    <input type="radio" id="rbAceptar" checked="@(Model.Incidencia.Estado=="A")" onclick="aceptarIncidencia();" />
+    <label for="rbAceptar" style="font-weight:normal;font-style:normal;font-size:12px;">Aceptar</label>
+
+    <input type="radio" id="rbRechazar" checked="@(Model.Incidencia.Estado=="R")" onclick="rechazarIncidencia();" />
+    <label for="rbRechazar" style="font-weight:normal;font-style:normal;font-size:12px;">Rechazar</label>
+
+    <input type="radio" id="rbFinalizar" checked="@(Model.Incidencia.Estado=="F")" onclick="finalizarIncidencia();" />
+    <label for="rbFinalizar" style="font-weight:normal;font-style:normal;font-size:12px;">Finalizar</label>
+</div>
+<table id="barraObsReclamo" cellpadding="0" cellspacing="0" width="580" style="margin-top:5px;">
+    <tr>
+        <th id="lnkObsReclamo" onmouseover="ChangeCursor();">Observar reclamo</th>
+    </tr>
+</table>
+<div id="dvAcciones" style="display:none;">
+    <div style="border-radius: 5px; width:350px;margin-top:4px;">
+        <label style="font-weight:normal;font-style:normal;font-size:12px;">Observaciones: </label><br />
+        <textarea id="txtaObsWeb" rows="3" style="resize: none;">@Model.ObsSVPWeb</textarea><br />
+    </div>
+    <div style="width:350px;margin-top:4px;border-radius:5px">
+        <label style="font-weight:normal;font-style:normal;font-size:12px;">Ingrese el ID CERTA: </label><br />
+        <input type="text" id="txtIDCERTA" value="@Model.idSAP" /><br />
+    </div>
+</div>
+<table id="barraDireccion" cellpadding="0" cellspacing="0" width="580" style="margin-top:5px;">
+    <tr>
+        <th id="lnkDireccion" onmouseover="ChangeCursor2();">Editar Direccion</th>
+    </tr>
+</table>
+<div id="dvDireccion" style="display:none;width:350px;margin-top:4px;">
+    <label style="font-weight:normal;font-style:normal;font-size:12px;">Calle: </label><br />
+    <input type="text" maxlength="49" id="txtCalle" value="@Model.Incidencia.Calle" /><br />
+    <label style="font-weight:normal;font-style:normal;font-size:12px;">Altura: </label><br />
+    <input type="text" maxlength="49" id="txtAltura" value="@Model.Incidencia.Altura" /><br />
+    <label style="font-weight:normal;font-style:normal;font-size:12px;">Localidad: </label><br />
+    <input type="text" maxlength="248" id="txtLocalidad" value="@Model.Incidencia.Localidad" /><br />
+    <label style="font-weight:normal;font-style:normal;font-size:12px;">Zona: </label><br />
+    <input type="hidden" id="hdnZona" value="@Model.Incidencia.Zona" />
+        <select id="ddlZona" style="border-radius:5px;border-color:#71A94A;color:royalblue;">
+            <option value="">Seleccionar</option>
+            <option value="1">AQ</option>
+            <option value="2">LO</option>
+            <option value="3">RO</option>
+            <option value="4">GP</option>
+        </select>
+</div>
+<div style="margin-top:10px;">
+    <button type="button" class="btn btn-success" id="btnActualizarIncidencia" onclick="actualizarDatosIncidencia();">Actualizar</button>
+</div>
+<script type="text/javascript">
+    jQuery(function ($) { 
+        var zonafromserver = document.getElementById('hdnZona').value;
+        var element = document.getElementById('ddlZona');
+
+        $("#ddlZona > option").each(function() {
+            if(this.text==zonafromserver)
+            {
+                $("#ddlZona").val(this.value);
+            }
+        });
+
+    });
+
+    function ChangeCursor()
+    {
+        document.getElementById("lnkObsReclamo").style.cursor="pointer";
+        return false;
+    }
+
+    function ChangeCursor2()
+    {
+        document.getElementById("lnkDireccion").style.cursor="pointer";
+        return false;
+    }
+
+    $('#barraObsReclamo').on('click', function (e) {
+        $("#dvAcciones").toggle();
+
+    });
+
+    $('#barraDireccion').on('click', function (e) {
+        $("#dvDireccion").toggle();
+
+    });
+
+    //Limitar la cantidad de caracteres en un TextBox
+    $("#txtaObsWeb").on("click", function (e) {
+        var max = 250;
+        if (e.which < 0x20) {
+
+            return;     // Do nothing
+        }
+        if (this.value.length == max) {
+            e.preventDefault();
+        } else if (this.value.length > max) {
+            // Maximum exceeded
+            this.value = this.value.substring(0, max);
+        }
+    });
+
+    //******** RADIO BUTTON *************
+    function aceptarIncidencia() {
+        $(rbRechazar).prop('checked', false);
+        $(rbFinalizar).prop('checked', false);
+    }
+    function rechazarIncidencia() {
+        $(rbAceptar).prop('checked', false);
+        $(rbFinalizar).prop('checked', false);
+    }
+    function finalizarIncidencia() {
+        $(rbAceptar).prop('checked', false);
+        $(rbRechazar).prop('checked', false);
+    }
+    //******** FIN RADIO BUTTON *************
+
+    //DETERMINAR NUEVO ESTADO INCIDENCIA
+    function determinarnuevoestadoIncidencia()
+    {
+        var nuevoestado;
+        if ($("input:radio[id=rbAceptar]").is(":checked"))
+        {
+
+            nuevoestado = "A";
+        }
+        if ($("input:radio[id=rbRechazar]").is(":checked"))
+        {
+
+            nuevoestado = "R";
+        }
+        if ($("input:radio[id=rbFinalizar]").is(":checked"))
+        {
+
+            nuevoestado = "F";
+        }
+
+        return nuevoestado;
+    }
+
+    //GUARDAR LA ACTUALIZACION DE DATOS DE LA INCIDENCIA
+    function actualizarDatosIncidencia()
+    {
+
+        var ID=@Model.IdIncidencia;
+        var url = '';
+        var nuevoestadoIncidencia=determinarnuevoestadoIncidencia();
+
+        Incidencia = {}
+        UsuarioSVPWebIncidencia= {}
+
+        url = "/Home/SaveUpdate";
+        Incidencia["ID"] = ID;
+        Incidencia["Estado"] = nuevoestadoIncidencia;
+        Incidencia["Calle"] = $('#txtCalle').val();
+        Incidencia["Altura"] = $('#txtAltura').val();
+        Incidencia["Localidad"] = $('#txtLocalidad').val();
+
+
+        var e = document.getElementById("ddlZona");
+        var strZona = e.options[e.selectedIndex].text;
+        Incidencia["Zona"] = strZona;
+
+        UsuarioSVPWebIncidencia["ObsSVPWeb"]=$('#txtaObsWeb').val();
+        UsuarioSVPWebIncidencia["idSAP"]=$('#txtIDCERTA').val();
+
+        //Captura los datos ingresados en un objeto js
+        //HACE POST
+        if(nuevoestadoIncidencia!=null)
+        {
+            $.ajax({
+                url: url,
+                data: JSON.stringify({ _IncidenciaData: Incidencia, _UsuarioSVPWebIncidencia:UsuarioSVPWebIncidencia }),
+                type: "POST",
+                traditional: true,
+                contentType: "application/json; charset=utf-8",
+                cache: false,
+                dataType: "json",
+                success: function (result) {
+                    window.location.reload();
+                    $("#dialog1").dialog('close');
+
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    alert(textStatus + " " + errorThrown);
+                }
+            });
+        }
+        else
+        {
+            alert('Por favor, seleccione un estado(Aceptar,Rechazar o Finalizar) para esta incidencia en la seccion "Acciones".');
+        }
+
+    }
+</script>
+

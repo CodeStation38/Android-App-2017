@@ -1,0 +1,219 @@
+﻿@model SVPWeb.Models.UsuarioSVPWeb
+
+
+<h3 style="color:#FF5604;">Nuevo Usuario Web</h3>
+
+<div class="form-horizontal" style="border:1px solid;border-radius:6px 6px 6px 6px;border-color:#FF5604;background-color:#FDEDD2;">
+    <hr />
+    <div class="form-group">
+        <label class="control-label col-md-2" style="color:#FF5604;">Numero de Legajo</label>
+        <div class="col-md-10">
+            <input class="form-control" type="text" id="txtLegajo" placeholder="ej, 9999"/><br />
+        </div>
+    </div>
+    <div class="form-group" style="margin-left:25px;">
+        <label class="control-label col-md-2" style="color:#FF5604;">Apellido</label>
+        <div class="col-md-10">
+            <input class="form-control" type="text" id="txtApe" placeholder="ej, Perez" value="@ViewBag.ApellidoEdicion" /><br />
+        </div>
+    </div>
+    <div class="form-group" style="margin-left:25px;">
+        <label class="control-label col-md-2" style="color:#FF5604;">Nombre</label>
+        <div class="col-md-10">
+            <input class="form-control" type="text" id="txtNom" placeholder="ej, Juan" value="@ViewBag.NombreEdicion" /><br />
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <button type="button" class="btn btn-warning" id="btnCrearUWeb" onclick="confirmaCambios();">Crear</button>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.9/jquery-ui.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+    function confirmaCambios()
+    {
+        if(confirm("Confirma creacion de usuario web?"))
+        {
+            ValidaCamposCreacionUWeb();
+        }
+        //else
+        //{
+        //    alert("CONTINUE EDITANDO...");
+        //}
+    }
+
+
+    function ValidaCamposCreacionUWeb()
+    {
+        //var legajovalor=$('#txtLegajo').val();
+        //var apenomvalor=$('#txtApeNom').val();
+
+        var strinvalidfields = '';
+        var surnameHasValidValue= false;
+        var nameHasValidValue= false;
+        var legajoHasValidValue = false;
+
+        //VERIFICA LEGAJO
+        var legajoVal = document.getElementById('txtLegajo').value;
+        if (!legajoVal.match(/\S/)) {
+            //alert ('Empty value is not allowed');
+            legajoHasValidValue = false;
+            strinvalidfields = strinvalidfields + 'Ingrese un Legajo valido. \n\r';
+        } else {
+            legajoHasValidValue = true;
+        }
+
+        //VERIFICA APELLIDO
+        var apellidoVal = document.getElementById('txtApe').value;
+        //alert("APENOM: " + apellidoVal);
+        if (!apellidoVal.match(/\S/)) {
+            // && apellidoVal!="" && apellidoVal!=null
+            //alert ('Empty value is not allowed');
+            surnameHasValidValue = false;
+            strinvalidfields = strinvalidfields + 'Ingrese un Apellido valido. \n\r';
+            
+        }
+        else 
+        {
+            //alert('APENOM IS VALID!');
+            surnameHasValidValue = true;
+        }
+
+
+        //VERIFICA NOMBRE
+        var nomVal = document.getElementById('txtNom').value;
+        //alert("APENOM: " + apellidoVal);
+        if (!nomVal.match(/\S/)) {
+            // && apellidoVal!="" && apellidoVal!=null
+            //alert ('Empty value is not allowed');
+            nameHasValidValue = false;
+            strinvalidfields = strinvalidfields + 'Ingrese un Nombre valido. \n\r';
+            
+        }
+        else 
+        {
+            //alert('APENOM IS VALID!');
+            nameHasValidValue = true;
+        }
+
+
+        if (nameHasValidValue && surnameHasValidValue && legajoHasValidValue)
+        {
+            crearUWeb();
+        }
+        else
+        {
+            alert('Por favor, revise los datos ingresados: \n\r' + strinvalidfields);
+        }
+        
+    }
+
+    function crearUWeb()
+    {
+        var IDUWeb=@Model.Id;
+ 
+        var validalegajo=false;
+        var msgerrorlegajo=""
+        var validaapenom=false;
+        var msgerrorapenom="";
+
+        var url = '';
+
+        UsuarioSVPWeb = {}
+
+        url = "/UsuarioSVPWeb/Crear";
+
+            UsuarioSVPWeb["Id"] = IDUWeb;
+            UsuarioSVPWeb["NumeroLegajo"] = $('#txtLegajo').val();
+        //UsuarioSVPWeb["NombreApellido"] = $('#txtApeNom').val();
+            UsuarioSVPWeb["NombreApellido"] = $('#txtApe').val() + "," + $('#txtNom').val();
+
+            $.ajax({
+                url: url,
+                data: JSON.stringify({ _UsuarioSVPWeb: UsuarioSVPWeb}),
+                type: "POST",
+                traditional: true,
+                contentType: "application/json; charset=utf-8",
+                cache: false,
+                dataType: "json",
+                success: function (result, status, xhr) {
+
+                  
+                    var resultFromServer = xhr.getResponseHeader("JSonResultado");
+                    //alert('JSON RES FROM SERVER: ' + resultFromServer);
+                    //if(resultFromServer>0)
+                    //{
+                    //    window.location.reload();
+                    //    $("#dialog3").dialog('close');
+                    //}
+                    //else
+                    //{
+                        if(resultFromServer=="-80")
+                        {
+                            alert("Error: Legajo inexistente.");
+                            window.location.reload();
+                            $("#dialog3").dialog('close');
+                        }
+                        else
+                        {
+                            if(resultFromServer=="-70")
+                            {
+                                alert("Error: Legajo ya esta registrado como Usuario Web.");
+                                window.location.reload();
+                                $("#dialog3").dialog('close');
+                            }
+                            else
+                            {
+                                alert("OK: Usuario creado con exito.");
+                                window.location.reload();
+                                $("#dialog3").dialog('close');
+                            }
+                        }
+                    //}
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    alert('Error al crear nuevo usuario web:' + textStatus + " " + errorThrown);
+                }
+            });
+    }
+
+
+    //function guardarValorCheck(valor)
+    //{
+    //    alert('CHECK VALUE PARAM' + valor);
+    //    if(valor==true)
+    //    {
+    //        $("#dvUWebPass").show();
+    //    }
+    //    else
+    //    {
+    //        $("#dvUWebPass").hide();
+    //    }
+
+    //    //document.getElementById("hdnRestablecerUWebPass").value = valor;
+    //    return false;
+    //}
+
+    //DETERMINAR NUEVOS PERMISOS SELECCIONADOS
+    //PERMISOS USUARIOWEB
+    function detnuevoestadpInciR()
+    {
+        var nuevopermisoInciR;
+        if ($("input:radio[id=rbInciR]").is(":checked"))
+        {
+            nuevopermisoInciR = true;
+        }
+        else
+        {
+            nuevopermisoInciR = false;
+        }
+        return nuevopermisoInciR;
+    }
+</script>

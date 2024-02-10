@@ -1,0 +1,106 @@
+﻿@model SVPWeb.Models.Incidencia
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Incidencia</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NlegajoUMobile)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NlegajoUMobile)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fecha)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fecha)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Zona)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Zona)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ObsMobile)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ObsMobile)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Calle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Calle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Altura)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Altura)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Localidad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Localidad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GPSLat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GPSLat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GPSLon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GPSLon)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Foto.Ruta1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Foto.Ruta1)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

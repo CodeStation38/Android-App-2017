@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compania- SVP</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <style>
+        #footer {
+        position: relative;
+        bottom: 0;
+        height: 64px;
+        width: 100%;
+        background-color: #222222;
+        }
+
+        @@media only screen and (max-width: 1026px) { 
+             
+        }
+
+    </style>
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <img src="~/img/style/Compania8.png" />
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><label style="background-color:#222222;width:10px;margin-top:15px;"></label></li>
+                    <li><label id="lblUserWebName" style="color:white;width:auto;margin-top:15px;"></label></li>
+                    <li><label style="background-color:#222222;width:5px;margin-top:15px;"></label></li>
+                    <li>@Html.ActionLink("Incidencias", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Usuarios Moviles", "Index", "UsuarioSVPMobiles")</li>
+                    <li>@Html.ActionLink("Usuarios Web", "Index", "UsuarioSVPWeb")</li>
+                    <li>@Html.ActionLink("Permisos", "Index", "PermisosUsuarios")</li>
+                    @*<li>@Html.ActionLink("Registro de sesiones", "Index", "Sesiones")</li>*@
+                    @*<li onmouseover="showsubmenu();">
+                        @Html.ActionLink("Registro de sesiones", "Index", "Sesiones")
+                        <ul id="ulSubmenu" style="display:none;z-index:auto;">
+                            <li>@Html.ActionLink("Registro de Incidencias", "", "")</li>
+                        </ul>
+                    </li>*@
+                    @*<li>@Html.ActionLink("Cerrar Sesion", "ValidacionUsuario", "Login")</li>*@
+                    <li><a id="lnkCerrarSesion" href="#" style="color:aqua;text-decoration:underline;" onclick="terminarSesionActual(this.id);">Cerrar Sesion</a></li>    
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+    </div>
+    
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    <script type="text/javascript">
+        //function showsubmenu()
+        //{
+        //    $('#ulSubmenu').show();
+        //    //alert('soy un submenu');
+        //}
+
+        function terminarSesionActual(id) {
+            //$('#spinner2').show();
+            var url = '';
+            LoginData = {}
+            //url = "/Home/Index";
+            url = "/Login/ValidacionUsuario";
+            var finsesion = id;        
+            var numlegajofinsesion = '@(ViewBag.Numeronamestring)';
+
+            LoginData["NumeroLegajo"] = numlegajofinsesion;
+            LoginData["Contrasenia"] = finsesion;
+
+            $.ajax({
+                url: url,
+                data: JSON.stringify({ _LoginData: LoginData }),
+                type: "POST",
+                traditional: true,
+                contentType: "application/json; charset=utf-8",
+                cache: false,
+                dataType: "html",
+                success: function (result, status, xhr)
+                {
+  
+                    window.location.href = "@Url.Action("Index", "Login")";
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown)
+                {
+                    alert('Respuesta Http: ' + XMLHttpRequest.responseText);
+                    alert("Ocurrio un error en pagina maestra: " + textStatus + " Detalles: " + errorThrown);
+                }
+            });
+        }
+
+    </script>
+</body>
+</html>

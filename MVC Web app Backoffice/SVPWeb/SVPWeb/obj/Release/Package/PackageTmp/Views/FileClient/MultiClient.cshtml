@@ -1,0 +1,39 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>ENVIAR MULTIPLES FOTOS</title>
+</head>
+<body>
+    <form enctype="multipart/form-data" method="post" action="http://localhost:51317/user/PostUserImage" id="ajaxUploadForm" novalidate="novalidate">
+
+        <fieldset>
+            <legend>Upload Form</legend>
+            <ol>
+                <li>
+                    <label>Description </label>
+                    <input type="text" style="width:317px" name="description" id="description">
+                </li>
+                <li>
+                    <label>upload </label>
+                    <input type="file" id="fileInput" name="fileInput" multiple>
+                </li>
+                <li>
+                    <input type="submit" value="ENVIAR MULTIPLES FOTOS" id="ajaxUploadButton" class="btn">
+                </li>
+            </ol>
+        </fieldset>
+
+        @*<h3>Upload Multiple files </h3>
+        <input type="file" name="images" value="" multiple="multiple" />
+        <input type="submit" value="UploadImage" title="Upload" />
+        <div style="color:Red;font-size:14px">@ViewBag.Message</div>*@
+
+    </form>
+</body>
+</html>

@@ -1,0 +1,80 @@
+﻿
+@{
+    ViewBag.Title = "filtros";
+}
+
+<table style="width:100%;">
+    <tr>
+        <th>
+            <div class="form-horizontal" id="dvFiltros">
+                Filtros
+            </div>
+        </th>
+        <th>
+            <div class="form-horizontal" id="dvFilEstado">
+                <select style="border-radius:5px;border-color:#71A94A;color:royalblue;" onchange="guardarfiltroEstado(this.value);">
+                    <option value="">Estado</option>
+                    <option value="N">Nueva</option>
+                    <option value="A">Aceptada</option>
+                    <option value="R">Rechazada</option>
+                    <option value="F">Finalizada</option>
+                </select>
+            </div>
+        </th>
+        <th>
+            <div class="form-horizontal" id="dvFilFecha">
+                <label style="font-weight:normal;font-style:normal;font-size:12px;"> Entre fecha </label> <input type="text" style="color:royalblue;" id="fechaInicio" value="Fecha Inicio" onchange="guardarValorFiltroFechaDesde(this.value)">
+                <label style="font-weight:normal;font-style:normal;font-size:12px;"> y </label> <input type="text" style="color:royalblue;" id="fechaFin" value="Fecha Fin" onchange="guardarValorFiltroFechaHasta(this.value)">
+            </div>
+        </th>
+        <th>
+            <div class="form-horizontal" id="dvFilUsuarioMovil" style="font-weight:normal;font-style:normal;font-size:12px;">
+                Legajo
+                <input id="txtFilUsuarioMovil" type="number" style="color:royalblue;" onchange="guardarfiltroUMovil(this.value);" /><span id="spnSearch" style="margin-left:10px;" class="glyphicon glyphicon-search" onmouseover="ChangeCursor5();"></span>
+            </div>
+        </th>
+        <th>
+            <div class="form-horizontal" id="dvFilZona">
+                <select style="border-radius:5px;border-color:#71A94A;color:royalblue;" onchange="guardarfiltroZona(this.value);">
+                    <option value="">Zona</option>
+                    <option value="AQ">AQ</option>
+                    <option value="LO">LO</option>
+                    <option value="RO">RO</option>
+                    <option value="GP">GP</option>
+                </select>
+            </div>
+        </th>
+        <th>
+            <div class="form-horizontal" id="dvBtnFiltrar">
+                @using (Html.BeginForm())
+                {
+                    @Html.Hidden("filtroEstado")
+                    @Html.Hidden("fechaDesde")
+                    @Html.Hidden("fechaHasta")
+                    @Html.Hidden("filtroUMovil")
+                    @Html.Hidden("filtroZona")
+                    @*<input type="submit" class="btn btn-success" onclick="return Validarfiltrar();" value="Filtrar" />*@
+                    @*<span id="spnSearch" class="glyphicon glyphicon-filter"></span>*@
+                    @*<a href="#" onclick="Validarfiltrar();" class="btn btn-success">
+                            Filtrar
+                            <span id="spnSearch" class="glyphicon glyphicon-filter"></span>
+                        </a>*@
+
+                    <button type="submit" class="btn btn-success" onclick="return Validarfiltrar();">
+                        <span id="spnSearch" class="glyphicon glyphicon-filter"></span> Filtrar
+                    </button>
+
+                }
+            </div>
+        </th>
+        <th>
+            <div class="form-horizontal" id="btnExportar">
+                <a href="@Url.Action("PrintExcel", "Home")" class="btn btn-success">
+                    Exportar
+                    <i class="fa fa-file-excel-o"></i>
+                </a>
+            </div>
+        </th>
+    </tr>
+</table>
+

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Good default declaration:
+        * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+        * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+        * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+            * Enable inline JS: add 'unsafe-inline' to default-src
+            * Enable eval(): add 'unsafe-eval' to default-src
+    -->  
+    <!--GPS FULL-->
+    <!--<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-inline' 'unsafe-eval'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; media-src *;script-src 'self' http://sms.compania.com.ar:9911/*  https://*.googleapis.com 'unsafe-inline' 'unsafe-eval'; connect-src http://sms.compania.com.ar:9911/user/CrearIncidencia https://*.googleapis.com">-->
+    <!--REGISTRACION-->  
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-inline' 'unsafe-eval'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; media-src *;script-src 'self' http://sms.compania.com.ar:9911/*  https://*.googleapis.com 'unsafe-inline' 'unsafe-eval'; connect-src http://sms.compania.com.ar:9911/user/CrearIncidencia http://sms.compania.com.ar:9911/user/CrearUsuarioMovil http://sms.compania.com.ar:9911/user/ConfigurarNuevoMovil http://sms.compania.com.ar:9911/user/LoginUserSVPMovil https://*.googleapis.com">
+    
+      <!-- Allow everything but only from the same origin and foo.com -->
+    <!--<meta http-equiv="Content-Security-Policy" content="default-src 'self' foo.com">-->
+    <!-- This policy allows everything (eg CSS, AJAX, object, frame, media, etc) except that
+        * CSS only from the same origin and inline styles,
+        * scripts only from the same origin and inline styles, and eval()
+    -->
+    <!--GPS FULL-->
+    <!--<meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; connect-src http://sms.compania.com.ar:9911/user/CrearIncidencia https://*.googleapis.com">-->
+    <!--REGISTRACION-->
+    <!--https://*.googleapis.com-->
+        <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; connect-src http://sms.compania.com.ar:9911/user/CrearIncidencia http://sms.compania.com.ar:9911/user/CrearUsuarioMovil http://sms.compania.com.ar:9911/user/ConfigurarNuevoMovil http://sms.compania.com.ar:9911/user/LoginUserSVPMovil https://*.googleapis.com">
+
+
+    <!-- Allows XHRs only over HTTPS on the same domain. -->
+    <!--<meta http-equiv="Content-Security-Policy" content="default-src 'self' https:">-->
+    <!-- Allow iframe to https://cordova.apache.org/ -->
+    <!--GPS FULL-->
+    <!--<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; frame-src 'self' https://cordova.apache.org; connect-src http://sms.compania.com.ar:9911/user/CrearIncidencia https://*.googleapis.com">-->
+    <!--REGISTRACION-->  
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; frame-src 'self' https://cordova.apache.org; connect-src http://sms.compania.com.ar:9911/user/CrearIncidencia http://sms.compania.com.ar:9911/user/CrearUsuarioMovil http://sms.compania.com.ar:9911/user/ConfigurarNuevoMovil http://sms.compania.com.ar:9911/user/LoginUserSVPMovil https://*.googleapis.com">
+
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+    <link rel="stylesheet" href="css/jquery.mobile.structure-1.4.5.min.css" />
+    <link rel="stylesheet" href="css/themes/lightBGFIX4.min.css"/>
+    <link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <title>SVPMovil</title>
+</head>
+<body>
+    <div id="Registrar-page" data-role="page" data-theme="a" class="not-displayed">
+        <div data-role="header" data-tap-toggle="false" data-position="fixed" class="alignlogo">
+            <div class="imgalignlogo">
+                <img src="images/logoverdepng2.png" class="logoheader" />
+            </div>
+        </div>
+        <div data-role="content" data-theme="a">
+            <h3 align="center">Ingreso primera vez</h3>
+
+            <label>Nombre (Obligatorio):</label>
+            <input id="svpNombre" name="svpNombre" placeholder="e.g. Juan"/>
+
+            <label>Apellido (Obligatorio):</label>
+            <input id="svpSurname" name="svpSurname" placeholder="e.g. Perez" />
+
+            <label>Numero de Legajo (Obligatorio):</label>
+            <input type="number" id="svpNumLegajo" name="svpNumLegajo" />
+
+            <label>Contrasenia (Obligatorio):</label>
+            <input type="password" id="svpContasenia" />
+
+            <label>Registracion usuario primera vez</label>
+            <a href="#" id="btnRegistrar" data-transition="fade" data-role="button">Registrar</a>
+            <label>Salir de la aplicacion y cerrarla.</label>
+            <button id="btnSalir" data-role="button">Salir</button>
+            <div id="error-msg" class="not-displayed">
+            </div>
+        </div>
+        <footer data-role="footer" data-tap-toggle="false" data-position="fixed" class="alignlogo">
+            <div class="imgalignlogo">
+                <img src="images/LOGOFOOT2.png" class="logoheader" />
+            </div>
+        </footer>
+    </div>
+    <div id="RegUsuarioProgressBar-page" data-role="page" data-theme="a" class="not-displayed">
+        <div data-role="header" data-tap-toggle="false" data-position="fixed" class="alignlogo">
+            <div class="imgalignlogo">
+                <img src="images/logoverdepng2.png" class="logoheader" />
+            </div>
+        </div>
+        <div data-role="content" data-theme="a">
+            <h2>Se recomienda no cerrar la aplicacion, ni interrumpir la conexion a internet, en este momento.</h2>
+            <h2>Aguarde mientras procesamos su solicitud de registracion.</h2>
+            <div id="dvProgressBarFotos" data-position="fixed">
+                <img src="images/edemov2.gif" class="imgalignloader" />
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/jquery-2.2.4.min.js"></script>
+    <script src="scripts/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="scripts/platformOverrides.js"></script>
+    <script src="scripts/svpsms.js"></script>
+    <script type="text/javascript" src="scripts/index.js"></script>
+</body>
+</html>

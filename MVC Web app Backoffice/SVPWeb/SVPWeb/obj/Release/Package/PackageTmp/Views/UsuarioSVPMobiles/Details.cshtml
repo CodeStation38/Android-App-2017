@@ -1,0 +1,42 @@
+﻿@model SVPWeb.Models.UsuarioSVPMobile
+
+@{
+    ViewBag.Title = "Detalles";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3 style="color:#337AB7">Detalle de Usuario Movil</h3>
+
+<div style="border:1px solid;border-radius:6px 6px 6px 6px;border-color:#337AB7;background-color:#F6FCFB;">
+        <hr />
+        <dl class="dl-horizontal">
+            <dt style = "color:#3C5A84;" >
+                @Html.DisplayNameFor(model => model.NumeroLegajo)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NumeroLegajo)
+            </dd>
+
+            <dt style = "color:#3C5A84;">
+                @Html.DisplayNameFor(model => model.Contrasenia)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Contrasenia)
+            </dd>
+
+            <dt style = "color:#3C5A84;">
+                @Html.DisplayNameFor(model => model.Estado)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Estado)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Editar", "Edit", new { id = Model.Id }) |
+        @Html.ActionLink("Volver a la Grilla", "Index")
+    </p>

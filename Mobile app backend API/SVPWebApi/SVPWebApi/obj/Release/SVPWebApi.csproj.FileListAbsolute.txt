@@ -1,0 +1,502 @@
+D:\Installers\PASAMANOS\OTROS\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\roslyn\csc.exe
+D:\Installers\PASAMANOS\OTROS\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Installers\PASAMANOS\OTROS\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Installers\PASAMANOS\OTROS\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Installers\PASAMANOS\OTROS\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Installers\PASAMANOS\OTROS\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Installers\PASAMANOS\OTROS\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Installers\PASAMANOS\OTROS\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\roslyn\System.Collections.Immutable.dll
+D:\Installers\PASAMANOS\OTROS\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\roslyn\System.Reflection.Metadata.dll
+D:\Installers\PASAMANOS\OTROS\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\roslyn\vbc.exe
+D:\Installers\PASAMANOS\OTROS\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\roslyn\VBCSCompiler.exe
+D:\Installers\PASAMANOS\OTROS\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\roslyn\VBCSCompiler.exe.config
+D:\Installers\PASAMANOS\OTROS\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\SVPWebApi.dll.config
+D:\Installers\PASAMANOS\OTROS\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\SVPWebApi.dll
+D:\Installers\PASAMANOS\OTROS\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\SVPWebApi.pdb
+D:\Installers\PASAMANOS\OTROS\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\Antlr3.Runtime.dll
+D:\Installers\PASAMANOS\OTROS\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\EntityFramework.dll
+D:\Installers\PASAMANOS\OTROS\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\EntityFramework.SqlServer.dll
+D:\Installers\PASAMANOS\OTROS\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Installers\PASAMANOS\OTROS\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\Microsoft.Web.Infrastructure.dll
+D:\Installers\PASAMANOS\OTROS\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\Newtonsoft.Json.dll
+D:\Installers\PASAMANOS\OTROS\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\System.Net.Http.Formatting.dll
+D:\Installers\PASAMANOS\OTROS\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\System.Web.Helpers.dll
+D:\Installers\PASAMANOS\OTROS\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\System.Web.Http.dll
+D:\Installers\PASAMANOS\OTROS\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\System.Web.Http.WebHost.dll
+D:\Installers\PASAMANOS\OTROS\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\System.Web.Mvc.dll
+D:\Installers\PASAMANOS\OTROS\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\System.Web.Optimization.dll
+D:\Installers\PASAMANOS\OTROS\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\System.Web.Razor.dll
+D:\Installers\PASAMANOS\OTROS\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\System.Web.WebPages.Deployment.dll
+D:\Installers\PASAMANOS\OTROS\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\System.Web.WebPages.dll
+D:\Installers\PASAMANOS\OTROS\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\System.Web.WebPages.Razor.dll
+D:\Installers\PASAMANOS\OTROS\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\WebGrease.dll
+D:\Installers\PASAMANOS\OTROS\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\EntityFramework.xml
+D:\Installers\PASAMANOS\OTROS\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\EntityFramework.SqlServer.xml
+D:\Installers\PASAMANOS\OTROS\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Installers\PASAMANOS\OTROS\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\Newtonsoft.Json.xml
+D:\Installers\PASAMANOS\OTROS\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\System.Net.Http.Formatting.xml
+D:\Installers\PASAMANOS\OTROS\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\System.Web.Helpers.xml
+D:\Installers\PASAMANOS\OTROS\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\System.Web.Http.xml
+D:\Installers\PASAMANOS\OTROS\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\System.Web.Http.WebHost.xml
+D:\Installers\PASAMANOS\OTROS\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\System.Web.Mvc.xml
+D:\Installers\PASAMANOS\OTROS\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\System.Web.Optimization.xml
+D:\Installers\PASAMANOS\OTROS\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\System.Web.Razor.xml
+D:\Installers\PASAMANOS\OTROS\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\System.Web.WebPages.xml
+D:\Installers\PASAMANOS\OTROS\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\System.Web.WebPages.Deployment.xml
+D:\Installers\PASAMANOS\OTROS\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\System.Web.WebPages.Razor.xml
+D:\Installers\PASAMANOS\OTROS\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\Antlr3.Runtime.pdb
+D:\Installers\PASAMANOS\OTROS\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\obj\Release\SVPWebApi.csprojResolveAssemblyReference.cache
+D:\Installers\PASAMANOS\OTROS\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\obj\Release\SVPWebApi.dll
+D:\Installers\PASAMANOS\OTROS\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\obj\Release\SVPWebApi.pdb
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\roslyn\csc.exe
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\roslyn\System.Collections.Immutable.dll
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\roslyn\System.Reflection.Metadata.dll
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\roslyn\vbc.exe
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\roslyn\VBCSCompiler.exe
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\roslyn\VBCSCompiler.exe.config
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\SVPWebApi.dll.config
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\SVPWebApi.dll
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\SVPWebApi.pdb
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\Antlr3.Runtime.dll
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\EntityFramework.dll
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\EntityFramework.SqlServer.dll
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\Microsoft.Web.Infrastructure.dll
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\Newtonsoft.Json.dll
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\System.Net.Http.Formatting.dll
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\System.Web.Helpers.dll
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\System.Web.Http.dll
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\System.Web.Http.WebHost.dll
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\System.Web.Mvc.dll
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\System.Web.Optimization.dll
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\System.Web.Razor.dll
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\System.Web.WebPages.Deployment.dll
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\System.Web.WebPages.dll
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\System.Web.WebPages.Razor.dll
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\WebGrease.dll
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\EntityFramework.xml
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\EntityFramework.SqlServer.xml
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\Newtonsoft.Json.xml
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\System.Net.Http.Formatting.xml
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\System.Web.Helpers.xml
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\System.Web.Http.xml
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\System.Web.Http.WebHost.xml
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\System.Web.Mvc.xml
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\System.Web.Optimization.xml
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\System.Web.Razor.xml
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\System.Web.WebPages.xml
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\System.Web.WebPages.Deployment.xml
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\System.Web.WebPages.Razor.xml
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\bin\Antlr3.Runtime.pdb
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\obj\Release\SVPWebApi.csprojResolveAssemblyReference.cache
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\obj\Release\SVPWebApi.dll
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\SVPWebApi\SVPWebApi\obj\Release\SVPWebApi.pdb
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\WEAPIPUERTOS\SVPWebApi\SVPWebApi\bin\roslyn\csc.exe
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\WEAPIPUERTOS\SVPWebApi\SVPWebApi\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\WEAPIPUERTOS\SVPWebApi\SVPWebApi\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\WEAPIPUERTOS\SVPWebApi\SVPWebApi\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\WEAPIPUERTOS\SVPWebApi\SVPWebApi\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\WEAPIPUERTOS\SVPWebApi\SVPWebApi\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\WEAPIPUERTOS\SVPWebApi\SVPWebApi\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\WEAPIPUERTOS\SVPWebApi\SVPWebApi\bin\roslyn\System.Collections.Immutable.dll
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\WEAPIPUERTOS\SVPWebApi\SVPWebApi\bin\roslyn\System.Reflection.Metadata.dll
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\WEAPIPUERTOS\SVPWebApi\SVPWebApi\bin\roslyn\vbc.exe
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\WEAPIPUERTOS\SVPWebApi\SVPWebApi\bin\roslyn\VBCSCompiler.exe
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\WEAPIPUERTOS\SVPWebApi\SVPWebApi\bin\roslyn\VBCSCompiler.exe.config
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\WEAPIPUERTOS\SVPWebApi\SVPWebApi\bin\SVPWebApi.dll.config
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\WEAPIPUERTOS\SVPWebApi\SVPWebApi\bin\SVPWebApi.dll
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\WEAPIPUERTOS\SVPWebApi\SVPWebApi\bin\SVPWebApi.pdb
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\WEAPIPUERTOS\SVPWebApi\SVPWebApi\bin\Antlr3.Runtime.dll
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\WEAPIPUERTOS\SVPWebApi\SVPWebApi\bin\EntityFramework.dll
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\WEAPIPUERTOS\SVPWebApi\SVPWebApi\bin\EntityFramework.SqlServer.dll
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\WEAPIPUERTOS\SVPWebApi\SVPWebApi\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\WEAPIPUERTOS\SVPWebApi\SVPWebApi\bin\Microsoft.Web.Infrastructure.dll
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\WEAPIPUERTOS\SVPWebApi\SVPWebApi\bin\Newtonsoft.Json.dll
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\WEAPIPUERTOS\SVPWebApi\SVPWebApi\bin\System.Net.Http.Formatting.dll
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\WEAPIPUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.Helpers.dll
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\WEAPIPUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.Http.dll
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\WEAPIPUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.Http.WebHost.dll
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\WEAPIPUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.Mvc.dll
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\WEAPIPUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.Optimization.dll
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\WEAPIPUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.Razor.dll
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\WEAPIPUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.WebPages.Deployment.dll
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\WEAPIPUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.WebPages.dll
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\WEAPIPUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.WebPages.Razor.dll
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\WEAPIPUERTOS\SVPWebApi\SVPWebApi\bin\WebGrease.dll
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\WEAPIPUERTOS\SVPWebApi\SVPWebApi\bin\EntityFramework.xml
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\WEAPIPUERTOS\SVPWebApi\SVPWebApi\bin\EntityFramework.SqlServer.xml
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\WEAPIPUERTOS\SVPWebApi\SVPWebApi\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\WEAPIPUERTOS\SVPWebApi\SVPWebApi\bin\Newtonsoft.Json.xml
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\WEAPIPUERTOS\SVPWebApi\SVPWebApi\bin\System.Net.Http.Formatting.xml
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\WEAPIPUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.Helpers.xml
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\WEAPIPUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.Http.xml
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\WEAPIPUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.Http.WebHost.xml
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\WEAPIPUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.Mvc.xml
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\WEAPIPUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.Optimization.xml
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\WEAPIPUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.Razor.xml
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\WEAPIPUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.WebPages.xml
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\WEAPIPUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.WebPages.Deployment.xml
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\WEAPIPUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.WebPages.Razor.xml
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\WEAPIPUERTOS\SVPWebApi\SVPWebApi\bin\Antlr3.Runtime.pdb
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\WEAPIPUERTOS\SVPWebApi\SVPWebApi\obj\Release\SVPWebApi.csprojResolveAssemblyReference.cache
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\WEAPIPUERTOS\SVPWebApi\SVPWebApi\obj\Release\SVPWebApi.dll
+C:\bb\pasamanos\ed\svp\pruebas\SVPWebApi\WEAPIPUERTOS\SVPWebApi\SVPWebApi\obj\Release\SVPWebApi.pdb
+C:\bb\pasamanos\ed\ver\4_3\SVPCreaIncidenciasPUERTOS\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\roslyn\csc.exe
+C:\bb\pasamanos\ed\ver\4_3\SVPCreaIncidenciasPUERTOS\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\bb\pasamanos\ed\ver\4_3\SVPCreaIncidenciasPUERTOS\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\bb\pasamanos\ed\ver\4_3\SVPCreaIncidenciasPUERTOS\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\bb\pasamanos\ed\ver\4_3\SVPCreaIncidenciasPUERTOS\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\bb\pasamanos\ed\ver\4_3\SVPCreaIncidenciasPUERTOS\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\bb\pasamanos\ed\ver\4_3\SVPCreaIncidenciasPUERTOS\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\bb\pasamanos\ed\ver\4_3\SVPCreaIncidenciasPUERTOS\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\roslyn\System.Collections.Immutable.dll
+C:\bb\pasamanos\ed\ver\4_3\SVPCreaIncidenciasPUERTOS\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\roslyn\System.Reflection.Metadata.dll
+C:\bb\pasamanos\ed\ver\4_3\SVPCreaIncidenciasPUERTOS\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\roslyn\vbc.exe
+C:\bb\pasamanos\ed\ver\4_3\SVPCreaIncidenciasPUERTOS\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\roslyn\VBCSCompiler.exe
+C:\bb\pasamanos\ed\ver\4_3\SVPCreaIncidenciasPUERTOS\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\roslyn\VBCSCompiler.exe.config
+C:\bb\pasamanos\ed\ver\4_3\SVPCreaIncidenciasPUERTOS\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\SVPWebApi.dll.config
+C:\bb\pasamanos\ed\ver\4_3\SVPCreaIncidenciasPUERTOS\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\SVPWebApi.dll
+C:\bb\pasamanos\ed\ver\4_3\SVPCreaIncidenciasPUERTOS\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\SVPWebApi.pdb
+C:\bb\pasamanos\ed\ver\4_3\SVPCreaIncidenciasPUERTOS\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\Antlr3.Runtime.dll
+C:\bb\pasamanos\ed\ver\4_3\SVPCreaIncidenciasPUERTOS\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\EntityFramework.dll
+C:\bb\pasamanos\ed\ver\4_3\SVPCreaIncidenciasPUERTOS\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\EntityFramework.SqlServer.dll
+C:\bb\pasamanos\ed\ver\4_3\SVPCreaIncidenciasPUERTOS\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\bb\pasamanos\ed\ver\4_3\SVPCreaIncidenciasPUERTOS\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\Microsoft.Web.Infrastructure.dll
+C:\bb\pasamanos\ed\ver\4_3\SVPCreaIncidenciasPUERTOS\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\Newtonsoft.Json.dll
+C:\bb\pasamanos\ed\ver\4_3\SVPCreaIncidenciasPUERTOS\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Net.Http.Formatting.dll
+C:\bb\pasamanos\ed\ver\4_3\SVPCreaIncidenciasPUERTOS\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.Helpers.dll
+C:\bb\pasamanos\ed\ver\4_3\SVPCreaIncidenciasPUERTOS\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.Http.dll
+C:\bb\pasamanos\ed\ver\4_3\SVPCreaIncidenciasPUERTOS\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.Http.WebHost.dll
+C:\bb\pasamanos\ed\ver\4_3\SVPCreaIncidenciasPUERTOS\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.Mvc.dll
+C:\bb\pasamanos\ed\ver\4_3\SVPCreaIncidenciasPUERTOS\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.Optimization.dll
+C:\bb\pasamanos\ed\ver\4_3\SVPCreaIncidenciasPUERTOS\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.Razor.dll
+C:\bb\pasamanos\ed\ver\4_3\SVPCreaIncidenciasPUERTOS\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.WebPages.Deployment.dll
+C:\bb\pasamanos\ed\ver\4_3\SVPCreaIncidenciasPUERTOS\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.WebPages.dll
+C:\bb\pasamanos\ed\ver\4_3\SVPCreaIncidenciasPUERTOS\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.WebPages.Razor.dll
+C:\bb\pasamanos\ed\ver\4_3\SVPCreaIncidenciasPUERTOS\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\WebGrease.dll
+C:\bb\pasamanos\ed\ver\4_3\SVPCreaIncidenciasPUERTOS\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\EntityFramework.xml
+C:\bb\pasamanos\ed\ver\4_3\SVPCreaIncidenciasPUERTOS\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\EntityFramework.SqlServer.xml
+C:\bb\pasamanos\ed\ver\4_3\SVPCreaIncidenciasPUERTOS\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\bb\pasamanos\ed\ver\4_3\SVPCreaIncidenciasPUERTOS\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\Newtonsoft.Json.xml
+C:\bb\pasamanos\ed\ver\4_3\SVPCreaIncidenciasPUERTOS\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Net.Http.Formatting.xml
+C:\bb\pasamanos\ed\ver\4_3\SVPCreaIncidenciasPUERTOS\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.Helpers.xml
+C:\bb\pasamanos\ed\ver\4_3\SVPCreaIncidenciasPUERTOS\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.Http.xml
+C:\bb\pasamanos\ed\ver\4_3\SVPCreaIncidenciasPUERTOS\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.Http.WebHost.xml
+C:\bb\pasamanos\ed\ver\4_3\SVPCreaIncidenciasPUERTOS\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.Mvc.xml
+C:\bb\pasamanos\ed\ver\4_3\SVPCreaIncidenciasPUERTOS\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.Optimization.xml
+C:\bb\pasamanos\ed\ver\4_3\SVPCreaIncidenciasPUERTOS\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.Razor.xml
+C:\bb\pasamanos\ed\ver\4_3\SVPCreaIncidenciasPUERTOS\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.WebPages.xml
+C:\bb\pasamanos\ed\ver\4_3\SVPCreaIncidenciasPUERTOS\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.WebPages.Deployment.xml
+C:\bb\pasamanos\ed\ver\4_3\SVPCreaIncidenciasPUERTOS\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.WebPages.Razor.xml
+C:\bb\pasamanos\ed\ver\4_3\SVPCreaIncidenciasPUERTOS\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\Antlr3.Runtime.pdb
+C:\bb\pasamanos\ed\ver\4_3\SVPCreaIncidenciasPUERTOS\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\obj\Release\SVPWebApi.csprojResolveAssemblyReference.cache
+C:\bb\pasamanos\ed\ver\4_3\SVPCreaIncidenciasPUERTOS\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\obj\Release\SVPWebApi.dll
+C:\bb\pasamanos\ed\ver\4_3\SVPCreaIncidenciasPUERTOS\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\obj\Release\SVPWebApi.pdb
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\17032017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\roslyn\csc.exe
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\17032017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\17032017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\17032017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\17032017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\17032017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\17032017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\17032017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\roslyn\System.Collections.Immutable.dll
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\17032017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\roslyn\System.Reflection.Metadata.dll
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\17032017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\roslyn\vbc.exe
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\17032017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\roslyn\VBCSCompiler.exe
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\17032017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\roslyn\VBCSCompiler.exe.config
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\17032017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\SVPWebApi.dll.config
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\17032017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\SVPWebApi.dll
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\17032017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\SVPWebApi.pdb
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\17032017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\Antlr3.Runtime.dll
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\17032017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\EntityFramework.dll
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\17032017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\EntityFramework.SqlServer.dll
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\17032017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\17032017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\Microsoft.Web.Infrastructure.dll
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\17032017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\Newtonsoft.Json.dll
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\17032017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Net.Http.Formatting.dll
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\17032017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.Helpers.dll
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\17032017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.Http.dll
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\17032017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.Http.WebHost.dll
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\17032017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.Mvc.dll
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\17032017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.Optimization.dll
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\17032017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.Razor.dll
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\17032017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.WebPages.Deployment.dll
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\17032017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.WebPages.dll
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\17032017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.WebPages.Razor.dll
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\17032017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\WebGrease.dll
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\17032017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\EntityFramework.xml
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\17032017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\EntityFramework.SqlServer.xml
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\17032017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\17032017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\Newtonsoft.Json.xml
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\17032017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Net.Http.Formatting.xml
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\17032017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.Helpers.xml
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\17032017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.Http.xml
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\17032017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.Http.WebHost.xml
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\17032017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.Mvc.xml
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\17032017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.Optimization.xml
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\17032017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.Razor.xml
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\17032017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.WebPages.xml
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\17032017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.WebPages.Deployment.xml
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\17032017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.WebPages.Razor.xml
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\17032017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\Antlr3.Runtime.pdb
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\17032017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\obj\Release\SVPWebApi.csprojResolveAssemblyReference.cache
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\17032017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\obj\Release\SVPWebApi.dll
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\17032017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\obj\Release\SVPWebApi.pdb
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\02042017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\roslyn\csc.exe
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\02042017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\02042017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\02042017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\02042017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\02042017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\02042017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\02042017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\roslyn\System.Collections.Immutable.dll
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\02042017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\roslyn\System.Reflection.Metadata.dll
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\02042017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\roslyn\vbc.exe
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\02042017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\roslyn\VBCSCompiler.exe
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\02042017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\roslyn\VBCSCompiler.exe.config
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\02042017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\SVPWebApi.dll.config
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\02042017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\SVPWebApi.dll
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\02042017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\SVPWebApi.pdb
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\02042017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\Antlr3.Runtime.dll
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\02042017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\EntityFramework.dll
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\02042017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\EntityFramework.SqlServer.dll
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\02042017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\02042017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\Microsoft.Web.Infrastructure.dll
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\02042017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\Newtonsoft.Json.dll
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\02042017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Net.Http.Formatting.dll
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\02042017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.Helpers.dll
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\02042017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.Http.dll
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\02042017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.Http.WebHost.dll
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\02042017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.Mvc.dll
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\02042017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.Optimization.dll
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\02042017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.Razor.dll
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\02042017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.WebPages.Deployment.dll
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\02042017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.WebPages.dll
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\02042017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.WebPages.Razor.dll
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\02042017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\WebGrease.dll
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\02042017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\EntityFramework.xml
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\02042017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\EntityFramework.SqlServer.xml
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\02042017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\02042017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\Newtonsoft.Json.xml
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\02042017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Net.Http.Formatting.xml
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\02042017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.Helpers.xml
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\02042017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.Http.xml
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\02042017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.Http.WebHost.xml
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\02042017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.Mvc.xml
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\02042017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.Optimization.xml
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\02042017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.Razor.xml
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\02042017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.WebPages.xml
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\02042017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.WebPages.Deployment.xml
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\02042017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.WebPages.Razor.xml
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\02042017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\Antlr3.Runtime.pdb
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\02042017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\obj\Release\SVPWebApi.csprojResolveAssemblyReference.cache
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\02042017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\obj\Release\SVPWebApi.dll
+C:\bb\pasamanos\ed\ver\4_3\DEBUGSERVICESMOBILE_OSCAR\02042017\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\obj\Release\SVPWebApi.pdb
+C:\bb\pasamanos\ed\ver\4_3\4FRegInciBlueG260417\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\roslyn\csc.exe
+C:\bb\pasamanos\ed\ver\4_3\4FRegInciBlueG260417\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\bb\pasamanos\ed\ver\4_3\4FRegInciBlueG260417\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\bb\pasamanos\ed\ver\4_3\4FRegInciBlueG260417\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\bb\pasamanos\ed\ver\4_3\4FRegInciBlueG260417\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\bb\pasamanos\ed\ver\4_3\4FRegInciBlueG260417\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\bb\pasamanos\ed\ver\4_3\4FRegInciBlueG260417\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\bb\pasamanos\ed\ver\4_3\4FRegInciBlueG260417\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\roslyn\System.Collections.Immutable.dll
+C:\bb\pasamanos\ed\ver\4_3\4FRegInciBlueG260417\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\roslyn\System.Reflection.Metadata.dll
+C:\bb\pasamanos\ed\ver\4_3\4FRegInciBlueG260417\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\roslyn\vbc.exe
+C:\bb\pasamanos\ed\ver\4_3\4FRegInciBlueG260417\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\roslyn\VBCSCompiler.exe
+C:\bb\pasamanos\ed\ver\4_3\4FRegInciBlueG260417\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\roslyn\VBCSCompiler.exe.config
+C:\bb\pasamanos\ed\ver\4_3\4FRegInciBlueG260417\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\SVPWebApi.dll.config
+C:\bb\pasamanos\ed\ver\4_3\4FRegInciBlueG260417\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\SVPWebApi.dll
+C:\bb\pasamanos\ed\ver\4_3\4FRegInciBlueG260417\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\SVPWebApi.pdb
+C:\bb\pasamanos\ed\ver\4_3\4FRegInciBlueG260417\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\Antlr3.Runtime.dll
+C:\bb\pasamanos\ed\ver\4_3\4FRegInciBlueG260417\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\EntityFramework.dll
+C:\bb\pasamanos\ed\ver\4_3\4FRegInciBlueG260417\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\EntityFramework.SqlServer.dll
+C:\bb\pasamanos\ed\ver\4_3\4FRegInciBlueG260417\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\bb\pasamanos\ed\ver\4_3\4FRegInciBlueG260417\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\Microsoft.Web.Infrastructure.dll
+C:\bb\pasamanos\ed\ver\4_3\4FRegInciBlueG260417\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\Newtonsoft.Json.dll
+C:\bb\pasamanos\ed\ver\4_3\4FRegInciBlueG260417\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Net.Http.Formatting.dll
+C:\bb\pasamanos\ed\ver\4_3\4FRegInciBlueG260417\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.Helpers.dll
+C:\bb\pasamanos\ed\ver\4_3\4FRegInciBlueG260417\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.Http.dll
+C:\bb\pasamanos\ed\ver\4_3\4FRegInciBlueG260417\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.Http.WebHost.dll
+C:\bb\pasamanos\ed\ver\4_3\4FRegInciBlueG260417\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.Mvc.dll
+C:\bb\pasamanos\ed\ver\4_3\4FRegInciBlueG260417\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.Optimization.dll
+C:\bb\pasamanos\ed\ver\4_3\4FRegInciBlueG260417\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.Razor.dll
+C:\bb\pasamanos\ed\ver\4_3\4FRegInciBlueG260417\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.WebPages.Deployment.dll
+C:\bb\pasamanos\ed\ver\4_3\4FRegInciBlueG260417\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.WebPages.dll
+C:\bb\pasamanos\ed\ver\4_3\4FRegInciBlueG260417\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.WebPages.Razor.dll
+C:\bb\pasamanos\ed\ver\4_3\4FRegInciBlueG260417\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\WebGrease.dll
+C:\bb\pasamanos\ed\ver\4_3\4FRegInciBlueG260417\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\EntityFramework.xml
+C:\bb\pasamanos\ed\ver\4_3\4FRegInciBlueG260417\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\EntityFramework.SqlServer.xml
+C:\bb\pasamanos\ed\ver\4_3\4FRegInciBlueG260417\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\bb\pasamanos\ed\ver\4_3\4FRegInciBlueG260417\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\Newtonsoft.Json.xml
+C:\bb\pasamanos\ed\ver\4_3\4FRegInciBlueG260417\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Net.Http.Formatting.xml
+C:\bb\pasamanos\ed\ver\4_3\4FRegInciBlueG260417\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.Helpers.xml
+C:\bb\pasamanos\ed\ver\4_3\4FRegInciBlueG260417\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.Http.xml
+C:\bb\pasamanos\ed\ver\4_3\4FRegInciBlueG260417\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.Http.WebHost.xml
+C:\bb\pasamanos\ed\ver\4_3\4FRegInciBlueG260417\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.Mvc.xml
+C:\bb\pasamanos\ed\ver\4_3\4FRegInciBlueG260417\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.Optimization.xml
+C:\bb\pasamanos\ed\ver\4_3\4FRegInciBlueG260417\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.Razor.xml
+C:\bb\pasamanos\ed\ver\4_3\4FRegInciBlueG260417\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.WebPages.xml
+C:\bb\pasamanos\ed\ver\4_3\4FRegInciBlueG260417\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.WebPages.Deployment.xml
+C:\bb\pasamanos\ed\ver\4_3\4FRegInciBlueG260417\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.WebPages.Razor.xml
+C:\bb\pasamanos\ed\ver\4_3\4FRegInciBlueG260417\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\Antlr3.Runtime.pdb
+C:\bb\pasamanos\ed\ver\4_3\4FRegInciBlueG260417\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\obj\Release\SVPWebApi.csprojResolveAssemblyReference.cache
+C:\bb\pasamanos\ed\ver\4_3\4FRegInciBlueG260417\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\obj\Release\SVPWebApi.dll
+C:\bb\pasamanos\ed\ver\4_3\4FRegInciBlueG260417\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\obj\Release\SVPWebApi.pdb
+C:\bb\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\roslyn\csc.exe
+C:\bb\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\bb\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\bb\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\bb\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\bb\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\bb\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\bb\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\roslyn\System.Collections.Immutable.dll
+C:\bb\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\roslyn\System.Reflection.Metadata.dll
+C:\bb\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\roslyn\vbc.exe
+C:\bb\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\roslyn\VBCSCompiler.exe
+C:\bb\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\roslyn\VBCSCompiler.exe.config
+C:\bb\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\SVPWebApi.dll.config
+C:\bb\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\SVPWebApi.dll
+C:\bb\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\SVPWebApi.pdb
+C:\bb\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\Antlr3.Runtime.dll
+C:\bb\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\EntityFramework.dll
+C:\bb\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\EntityFramework.SqlServer.dll
+C:\bb\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\bb\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\Microsoft.Web.Infrastructure.dll
+C:\bb\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\Newtonsoft.Json.dll
+C:\bb\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Net.Http.Formatting.dll
+C:\bb\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.Helpers.dll
+C:\bb\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.Http.dll
+C:\bb\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.Http.WebHost.dll
+C:\bb\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.Mvc.dll
+C:\bb\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.Optimization.dll
+C:\bb\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.Razor.dll
+C:\bb\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.WebPages.Deployment.dll
+C:\bb\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.WebPages.dll
+C:\bb\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.WebPages.Razor.dll
+C:\bb\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\WebGrease.dll
+C:\bb\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\EntityFramework.xml
+C:\bb\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\EntityFramework.SqlServer.xml
+C:\bb\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\bb\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\Newtonsoft.Json.xml
+C:\bb\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Net.Http.Formatting.xml
+C:\bb\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.Helpers.xml
+C:\bb\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.Http.xml
+C:\bb\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.Http.WebHost.xml
+C:\bb\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.Mvc.xml
+C:\bb\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.Optimization.xml
+C:\bb\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.Razor.xml
+C:\bb\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.WebPages.xml
+C:\bb\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.WebPages.Deployment.xml
+C:\bb\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\System.Web.WebPages.Razor.xml
+C:\bb\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\bin\Antlr3.Runtime.pdb
+C:\bb\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\obj\Release\SVPWebApi.dll
+C:\bb\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\obj\Release\SVPWebApi.pdb
+C:\bb\WEBAPI_PUERTOS\SVPWebApi\SVPWebApi\obj\Release\SVPWebApi.csprojResolveAssemblyReference.cache
+C:\bb\Desarrollo\WEBAPI\SVPWebApi\SVPWebApi\bin\roslyn\csc.exe
+C:\bb\Desarrollo\WEBAPI\SVPWebApi\SVPWebApi\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\bb\Desarrollo\WEBAPI\SVPWebApi\SVPWebApi\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\bb\Desarrollo\WEBAPI\SVPWebApi\SVPWebApi\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\bb\Desarrollo\WEBAPI\SVPWebApi\SVPWebApi\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\bb\Desarrollo\WEBAPI\SVPWebApi\SVPWebApi\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\bb\Desarrollo\WEBAPI\SVPWebApi\SVPWebApi\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\bb\Desarrollo\WEBAPI\SVPWebApi\SVPWebApi\bin\roslyn\System.Collections.Immutable.dll
+C:\bb\Desarrollo\WEBAPI\SVPWebApi\SVPWebApi\bin\roslyn\System.Reflection.Metadata.dll
+C:\bb\Desarrollo\WEBAPI\SVPWebApi\SVPWebApi\bin\roslyn\vbc.exe
+C:\bb\Desarrollo\WEBAPI\SVPWebApi\SVPWebApi\bin\roslyn\VBCSCompiler.exe
+C:\bb\Desarrollo\WEBAPI\SVPWebApi\SVPWebApi\bin\roslyn\VBCSCompiler.exe.config
+C:\bb\Desarrollo\WEBAPI\SVPWebApi\SVPWebApi\bin\SVPWebApi.dll.config
+C:\bb\Desarrollo\WEBAPI\SVPWebApi\SVPWebApi\bin\SVPWebApi.dll
+C:\bb\Desarrollo\WEBAPI\SVPWebApi\SVPWebApi\bin\SVPWebApi.pdb
+C:\bb\Desarrollo\WEBAPI\SVPWebApi\SVPWebApi\bin\Antlr3.Runtime.dll
+C:\bb\Desarrollo\WEBAPI\SVPWebApi\SVPWebApi\bin\EntityFramework.dll
+C:\bb\Desarrollo\WEBAPI\SVPWebApi\SVPWebApi\bin\EntityFramework.SqlServer.dll
+C:\bb\Desarrollo\WEBAPI\SVPWebApi\SVPWebApi\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\bb\Desarrollo\WEBAPI\SVPWebApi\SVPWebApi\bin\Microsoft.Web.Infrastructure.dll
+C:\bb\Desarrollo\WEBAPI\SVPWebApi\SVPWebApi\bin\Newtonsoft.Json.dll
+C:\bb\Desarrollo\WEBAPI\SVPWebApi\SVPWebApi\bin\System.Net.Http.Formatting.dll
+C:\bb\Desarrollo\WEBAPI\SVPWebApi\SVPWebApi\bin\System.Web.Helpers.dll
+C:\bb\Desarrollo\WEBAPI\SVPWebApi\SVPWebApi\bin\System.Web.Http.dll
+C:\bb\Desarrollo\WEBAPI\SVPWebApi\SVPWebApi\bin\System.Web.Http.WebHost.dll
+C:\bb\Desarrollo\WEBAPI\SVPWebApi\SVPWebApi\bin\System.Web.Mvc.dll
+C:\bb\Desarrollo\WEBAPI\SVPWebApi\SVPWebApi\bin\System.Web.Optimization.dll
+C:\bb\Desarrollo\WEBAPI\SVPWebApi\SVPWebApi\bin\System.Web.Razor.dll
+C:\bb\Desarrollo\WEBAPI\SVPWebApi\SVPWebApi\bin\System.Web.WebPages.Deployment.dll
+C:\bb\Desarrollo\WEBAPI\SVPWebApi\SVPWebApi\bin\System.Web.WebPages.dll
+C:\bb\Desarrollo\WEBAPI\SVPWebApi\SVPWebApi\bin\System.Web.WebPages.Razor.dll
+C:\bb\Desarrollo\WEBAPI\SVPWebApi\SVPWebApi\bin\WebGrease.dll
+C:\bb\Desarrollo\WEBAPI\SVPWebApi\SVPWebApi\bin\EntityFramework.xml
+C:\bb\Desarrollo\WEBAPI\SVPWebApi\SVPWebApi\bin\EntityFramework.SqlServer.xml
+C:\bb\Desarrollo\WEBAPI\SVPWebApi\SVPWebApi\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\bb\Desarrollo\WEBAPI\SVPWebApi\SVPWebApi\bin\Newtonsoft.Json.xml
+C:\bb\Desarrollo\WEBAPI\SVPWebApi\SVPWebApi\bin\System.Net.Http.Formatting.xml
+C:\bb\Desarrollo\WEBAPI\SVPWebApi\SVPWebApi\bin\System.Web.Helpers.xml
+C:\bb\Desarrollo\WEBAPI\SVPWebApi\SVPWebApi\bin\System.Web.Http.xml
+C:\bb\Desarrollo\WEBAPI\SVPWebApi\SVPWebApi\bin\System.Web.Http.WebHost.xml
+C:\bb\Desarrollo\WEBAPI\SVPWebApi\SVPWebApi\bin\System.Web.Mvc.xml
+C:\bb\Desarrollo\WEBAPI\SVPWebApi\SVPWebApi\bin\System.Web.Optimization.xml
+C:\bb\Desarrollo\WEBAPI\SVPWebApi\SVPWebApi\bin\System.Web.Razor.xml
+C:\bb\Desarrollo\WEBAPI\SVPWebApi\SVPWebApi\bin\System.Web.WebPages.xml
+C:\bb\Desarrollo\WEBAPI\SVPWebApi\SVPWebApi\bin\System.Web.WebPages.Deployment.xml
+C:\bb\Desarrollo\WEBAPI\SVPWebApi\SVPWebApi\bin\System.Web.WebPages.Razor.xml
+C:\bb\Desarrollo\WEBAPI\SVPWebApi\SVPWebApi\bin\Antlr3.Runtime.pdb
+C:\bb\Desarrollo\WEBAPI\SVPWebApi\SVPWebApi\obj\Release\SVPWebApi.dll
+C:\bb\Desarrollo\WEBAPI\SVPWebApi\SVPWebApi\obj\Release\SVPWebApi.pdb
+C:\bb\Desarrollo\WEBAPI\SVPWebApi\SVPWebApi\obj\Release\SVPWebApi.csprojResolveAssemblyReference.cache
+E:\DEMOS HUGO BALCAZAR\DEMOS HUGO BALCAZAR\WEBAPI\SVPWebApi\SVPWebApi\bin\roslyn\csc.exe
+E:\DEMOS HUGO BALCAZAR\DEMOS HUGO BALCAZAR\WEBAPI\SVPWebApi\SVPWebApi\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\DEMOS HUGO BALCAZAR\DEMOS HUGO BALCAZAR\WEBAPI\SVPWebApi\SVPWebApi\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\DEMOS HUGO BALCAZAR\DEMOS HUGO BALCAZAR\WEBAPI\SVPWebApi\SVPWebApi\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\DEMOS HUGO BALCAZAR\DEMOS HUGO BALCAZAR\WEBAPI\SVPWebApi\SVPWebApi\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\DEMOS HUGO BALCAZAR\DEMOS HUGO BALCAZAR\WEBAPI\SVPWebApi\SVPWebApi\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\DEMOS HUGO BALCAZAR\DEMOS HUGO BALCAZAR\WEBAPI\SVPWebApi\SVPWebApi\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\DEMOS HUGO BALCAZAR\DEMOS HUGO BALCAZAR\WEBAPI\SVPWebApi\SVPWebApi\bin\roslyn\System.Collections.Immutable.dll
+E:\DEMOS HUGO BALCAZAR\DEMOS HUGO BALCAZAR\WEBAPI\SVPWebApi\SVPWebApi\bin\roslyn\System.Reflection.Metadata.dll
+E:\DEMOS HUGO BALCAZAR\DEMOS HUGO BALCAZAR\WEBAPI\SVPWebApi\SVPWebApi\bin\roslyn\vbc.exe
+E:\DEMOS HUGO BALCAZAR\DEMOS HUGO BALCAZAR\WEBAPI\SVPWebApi\SVPWebApi\bin\roslyn\VBCSCompiler.exe
+E:\DEMOS HUGO BALCAZAR\DEMOS HUGO BALCAZAR\WEBAPI\SVPWebApi\SVPWebApi\bin\roslyn\VBCSCompiler.exe.config
+E:\DEMOS HUGO BALCAZAR\DEMOS HUGO BALCAZAR\WEBAPI\SVPWebApi\SVPWebApi\bin\SVPWebApi.dll.config
+E:\DEMOS HUGO BALCAZAR\DEMOS HUGO BALCAZAR\WEBAPI\SVPWebApi\SVPWebApi\bin\SVPWebApi.dll
+E:\DEMOS HUGO BALCAZAR\DEMOS HUGO BALCAZAR\WEBAPI\SVPWebApi\SVPWebApi\bin\SVPWebApi.pdb
+E:\DEMOS HUGO BALCAZAR\DEMOS HUGO BALCAZAR\WEBAPI\SVPWebApi\SVPWebApi\bin\Antlr3.Runtime.dll
+E:\DEMOS HUGO BALCAZAR\DEMOS HUGO BALCAZAR\WEBAPI\SVPWebApi\SVPWebApi\bin\EntityFramework.dll
+E:\DEMOS HUGO BALCAZAR\DEMOS HUGO BALCAZAR\WEBAPI\SVPWebApi\SVPWebApi\bin\EntityFramework.SqlServer.dll
+E:\DEMOS HUGO BALCAZAR\DEMOS HUGO BALCAZAR\WEBAPI\SVPWebApi\SVPWebApi\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\DEMOS HUGO BALCAZAR\DEMOS HUGO BALCAZAR\WEBAPI\SVPWebApi\SVPWebApi\bin\Microsoft.Web.Infrastructure.dll
+E:\DEMOS HUGO BALCAZAR\DEMOS HUGO BALCAZAR\WEBAPI\SVPWebApi\SVPWebApi\bin\Newtonsoft.Json.dll
+E:\DEMOS HUGO BALCAZAR\DEMOS HUGO BALCAZAR\WEBAPI\SVPWebApi\SVPWebApi\bin\System.Net.Http.Formatting.dll
+E:\DEMOS HUGO BALCAZAR\DEMOS HUGO BALCAZAR\WEBAPI\SVPWebApi\SVPWebApi\bin\System.Web.Helpers.dll
+E:\DEMOS HUGO BALCAZAR\DEMOS HUGO BALCAZAR\WEBAPI\SVPWebApi\SVPWebApi\bin\System.Web.Http.dll
+E:\DEMOS HUGO BALCAZAR\DEMOS HUGO BALCAZAR\WEBAPI\SVPWebApi\SVPWebApi\bin\System.Web.Http.WebHost.dll
+E:\DEMOS HUGO BALCAZAR\DEMOS HUGO BALCAZAR\WEBAPI\SVPWebApi\SVPWebApi\bin\System.Web.Mvc.dll
+E:\DEMOS HUGO BALCAZAR\DEMOS HUGO BALCAZAR\WEBAPI\SVPWebApi\SVPWebApi\bin\System.Web.Optimization.dll
+E:\DEMOS HUGO BALCAZAR\DEMOS HUGO BALCAZAR\WEBAPI\SVPWebApi\SVPWebApi\bin\System.Web.Razor.dll
+E:\DEMOS HUGO BALCAZAR\DEMOS HUGO BALCAZAR\WEBAPI\SVPWebApi\SVPWebApi\bin\System.Web.WebPages.Deployment.dll
+E:\DEMOS HUGO BALCAZAR\DEMOS HUGO BALCAZAR\WEBAPI\SVPWebApi\SVPWebApi\bin\System.Web.WebPages.dll
+E:\DEMOS HUGO BALCAZAR\DEMOS HUGO BALCAZAR\WEBAPI\SVPWebApi\SVPWebApi\bin\System.Web.WebPages.Razor.dll
+E:\DEMOS HUGO BALCAZAR\DEMOS HUGO BALCAZAR\WEBAPI\SVPWebApi\SVPWebApi\bin\WebGrease.dll
+E:\DEMOS HUGO BALCAZAR\DEMOS HUGO BALCAZAR\WEBAPI\SVPWebApi\SVPWebApi\bin\EntityFramework.xml
+E:\DEMOS HUGO BALCAZAR\DEMOS HUGO BALCAZAR\WEBAPI\SVPWebApi\SVPWebApi\bin\EntityFramework.SqlServer.xml
+E:\DEMOS HUGO BALCAZAR\DEMOS HUGO BALCAZAR\WEBAPI\SVPWebApi\SVPWebApi\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\DEMOS HUGO BALCAZAR\DEMOS HUGO BALCAZAR\WEBAPI\SVPWebApi\SVPWebApi\bin\Newtonsoft.Json.xml
+E:\DEMOS HUGO BALCAZAR\DEMOS HUGO BALCAZAR\WEBAPI\SVPWebApi\SVPWebApi\bin\System.Net.Http.Formatting.xml
+E:\DEMOS HUGO BALCAZAR\DEMOS HUGO BALCAZAR\WEBAPI\SVPWebApi\SVPWebApi\bin\System.Web.Helpers.xml
+E:\DEMOS HUGO BALCAZAR\DEMOS HUGO BALCAZAR\WEBAPI\SVPWebApi\SVPWebApi\bin\System.Web.Http.xml
+E:\DEMOS HUGO BALCAZAR\DEMOS HUGO BALCAZAR\WEBAPI\SVPWebApi\SVPWebApi\bin\System.Web.Http.WebHost.xml
+E:\DEMOS HUGO BALCAZAR\DEMOS HUGO BALCAZAR\WEBAPI\SVPWebApi\SVPWebApi\bin\System.Web.Mvc.xml
+E:\DEMOS HUGO BALCAZAR\DEMOS HUGO BALCAZAR\WEBAPI\SVPWebApi\SVPWebApi\bin\System.Web.Optimization.xml
+E:\DEMOS HUGO BALCAZAR\DEMOS HUGO BALCAZAR\WEBAPI\SVPWebApi\SVPWebApi\bin\System.Web.Razor.xml
+E:\DEMOS HUGO BALCAZAR\DEMOS HUGO BALCAZAR\WEBAPI\SVPWebApi\SVPWebApi\bin\System.Web.WebPages.xml
+E:\DEMOS HUGO BALCAZAR\DEMOS HUGO BALCAZAR\WEBAPI\SVPWebApi\SVPWebApi\bin\System.Web.WebPages.Deployment.xml
+E:\DEMOS HUGO BALCAZAR\DEMOS HUGO BALCAZAR\WEBAPI\SVPWebApi\SVPWebApi\bin\System.Web.WebPages.Razor.xml
+E:\DEMOS HUGO BALCAZAR\DEMOS HUGO BALCAZAR\WEBAPI\SVPWebApi\SVPWebApi\bin\Antlr3.Runtime.pdb
+E:\DEMOS HUGO BALCAZAR\DEMOS HUGO BALCAZAR\WEBAPI\SVPWebApi\SVPWebApi\obj\Release\SVPWebApi.csproj.AssemblyReference.cache
+E:\DEMOS HUGO BALCAZAR\DEMOS HUGO BALCAZAR\WEBAPI\SVPWebApi\SVPWebApi\obj\Release\SVPWebApi.csproj.CoreCompileInputs.cache
+E:\DEMOS HUGO BALCAZAR\DEMOS HUGO BALCAZAR\WEBAPI\SVPWebApi\SVPWebApi\obj\Release\SVPWebApi.csproj.CopyComplete
+E:\DEMOS HUGO BALCAZAR\DEMOS HUGO BALCAZAR\WEBAPI\SVPWebApi\SVPWebApi\obj\Release\SVPWebApi.dll
+E:\DEMOS HUGO BALCAZAR\DEMOS HUGO BALCAZAR\WEBAPI\SVPWebApi\SVPWebApi\obj\Release\SVPWebApi.pdb

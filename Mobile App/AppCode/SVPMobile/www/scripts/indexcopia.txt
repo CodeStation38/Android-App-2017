@@ -1,0 +1,442 @@
+﻿// For an introduction to the Blank template, see the following documentation:
+// http://go.microsoft.com/fwlink/?LinkID=397704
+// To debug code on page load in Ripple or on Android devices/emulators: launch your app, set breakpoints, 
+// and then run "window.location.reload()" in the JavaScript Console.
+var pictureSource; // picture source
+var destinationType; // sets the format of returned value 
+(function () {
+    "use strict";
+
+    document.addEventListener('deviceready', onDeviceReady.bind(this), false);
+    var contadorFotos = 1;
+    //var conjfotoID=-1;
+    //var cantfotosrestantes = 0;
+    //Variables globales para almacenar las fotos, para ser enviadas con el
+    //boton Enviar (Incidente), en la anteultima pagina de la aplicacion
+    var externalImagenUri1;
+    var externalImagenUri2;
+    var externalImagenUri3;
+    var externalImagenUri4;
+    var nlegajo1 = 1;
+    var pass1="X";
+    var obsmobile1="X";
+    var calle1="X";
+    var altura1=9999; 
+    var localidad1 = "X";
+    var thenum1 = 2;
+    var thenum2 = 2;
+
+    function onDeviceReady() {
+        // Handle the Cordova pause and resume events
+        document.addEventListener('pause', onPause.bind(this), false);
+        document.addEventListener('resume', onResume.bind(this), false);
+
+        //Sacar foto y guardarla(Prueba de almacenamiento)
+        if (contadorFotos < 4)
+        {
+            $("#btnTomarFoto").on("tap", function () {
+
+                navigator.camera.getPicture(onSuccess, onFail,
+                {
+                    quality: 100,
+                    destinationType: Camera.DestinationType.FILE_URI,
+                    saveToPhotoAlbum: true
+                });
+            });
+
+
+            $("#btnFotoYEnviar").on("tap", function () {
+                //alert('Intento enviar las fotos...');
+                //alert('Probando externalURI1: ' + externalImagenUri1);
+                //alert('Probando externalURI2: ' + externalImagenUri2);
+                //alert('Probando externalURI3: ' + externalImagenUri3);
+                //alert('Probando externalURI4: ' + externalImagenUri4);
+                // conjfotoID = -1;
+                //cantfotosrestantes = contadorFotos;
+                //alert('CANT FOTOS  QUE SE SACARON: ' + contadorFotos);
+
+                //INSERTAR FOTO Y PRIMER RUTA
+                //cantfotosrestantes = contadorFotos;
+                //if (externalImagenUri1!=='undefined')
+                //{
+                    uploadPhoto(externalImagenUri1);
+                //}
+          
+
+                ////BUSCAR FOTOSETID COMPLETAR SEGUNDA RUTA
+                //if (externalImagenUri1 !== 'undefined') {
+                //    uploadPhoto(externalImagenUri2)
+                //}
+               
+
+                ////BUSCAR FOTOSETID COMPLETAR TERCERA RUTA
+                //if (externalImagenUri1 !== 'undefined') {
+                //    uploadPhoto(externalImagenUri3);
+                //}
+              
+
+                ////BUSCAR FOTOSETID COMPLETAR TERCERA RUTA
+                //if (externalImagenUri1 !== 'undefined') {
+                //    uploadPhoto(externalImagenUri4);
+                //}
+
+                //***** ASEGURAR EL ENVIO DE ESTOS PARAMETROS: ******
+                //var nlegajo1 = 1;
+                //var pass1 = "X";
+                //var obsmobile1 = "X";
+                //var calle1 = "X";
+                //var altura1 = 9999;
+                //var localidad1 = "X";
+
+                //alert($('#svpNumLegajo').val());
+                nlegajo1 = $('#svpNumLegajo').val();
+                //alert($('#svpContasenia').val());
+                 pass1 = $('#svpContasenia').val();
+                //alert($('#svpDetIncidente').val());
+                 obsmobile1 = $('#svpDetIncidente').val();
+                //alert($('#svpUbCalle').val());
+                 calle1 = $('#svpUbCalle').val();
+                //alert($('#svpUbAltura').val());
+                 altura1 = $('#svpUbAltura').val();
+                //alert($('#svpUbLocalidad').val());
+                 localidad1 = $('#svpUbLocalidad').val();
+
+                //CrearIncidencia();
+
+
+            });
+
+            //$("#bBorrarFoto1").on("tap", function () {
+            //    alert('FOTO1 BORRADA!');
+            //});
+
+            //$("#bBorrarFoto2").on("tap", function () {
+            //    alert('FOTO2 BORRADA!');
+            //});
+
+            //$("#bBorrarFoto3").on("tap", function () {
+            //    alert('FOTO3 BORRADA!');
+            //});
+
+            //$("#bBorrarFoto4").on("tap", function () {
+            //    alert('FOTO4 BORRADA!');
+            //});
+        }
+        else
+        {
+            //$("#bBorrarFoto").hide();
+            $("#btnTomarFoto").parent().hide();
+
+        }
+
+        //Limitar la cantidad de caracteres en un TextBox
+        $("#svpDetIncidente").on("tap", function (e) {
+            var max = 250;
+            if (e.which < 0x20) {
+                // e.which < 0x20, then it's not a printable character
+                // e.which === 0 - Not a character
+                return;     // Do nothing
+            }
+            if (this.value.length == max) {
+                e.preventDefault();
+            } else if (this.value.length > max) {
+                // Maximum exceeded
+                this.value = this.value.substring(0, max);
+            }
+        });
+
+        $("#btnSalir").on("tap", function () {
+            ExitMyApp();
+        });
+        $("#btnSalir2").on("tap", function () {
+            ExitMyApp();
+        });
+        $("#btnSalir3").on("tap", function () {
+            ExitMyApp();
+        });
+
+    };
+   
+    //A callback function when snapping picture is success.
+    function onSuccess(imageuri) {
+        //alert('CantFotos: ' + contadorFotos);
+        if (contadorFotos <= 4) {
+         
+            var binaryimg = contadorFotos;
+            window['variable' + binaryimg] = imageuri;
+
+            switch (contadorFotos) {
+                case 1:
+                    var newvar1 = window['variable' + binaryimg];
+                    externalImagenUri1 = newvar1;
+
+                    var image1 = document.getElementById("thephoto1");
+                    image1.innerHTML = "<img src='" + newvar1 + "'style='width:20%'/>";
+                    //$("#dvBorrar1").show();
+                    contadorFotos = contadorFotos + 1;
+                    break;
+                case 2:
+                    var newvar2 = window['variable' + binaryimg];
+                     externalImagenUri2 = newvar2;
+
+                    var image2 = document.getElementById("thephoto2");
+                    image2.innerHTML = "<img src='" + newvar2 + "'style='width:20%'/>";
+                    //$("#dvBorrar2").show();
+                    contadorFotos = contadorFotos + 1;
+                    break;
+                case 3:
+                    var newvar3 = window['variable' + binaryimg];
+                     externalImagenUri3 = newvar3;
+
+                    var image3 = document.getElementById("thephoto3");
+                    image3.innerHTML = "<img src='" + newvar3 + "'style='width:20%'/>";
+                    //$("#dvBorra3").show();
+                    contadorFotos = contadorFotos + 1;
+                    break;
+                case 4:
+                    //alert('Procesado foto 4: ' + contadorFotos);
+                    var newvar4 = window['variable' + binaryimg];
+                     externalImagenUri4 = newvar4;
+
+                    var image4 = document.getElementById("thephoto4");
+                    image4.innerHTML = "<img src='" + newvar4 + "'style='width:20%'/>";
+                    //$("#dvBorrar4").show();
+                    contadorFotos = contadorFotos + 1;
+                    $("#btnTomarFoto").parent().hide();
+                    break;
+            }
+        }
+        else
+        {
+             $("#btnTomarFoto").parent().hide();
+            //$("#btnTomarFoto").hide();
+     
+            alert('Limite alcanzado: Cuatro fotos por emergencia.');
+        }
+
+    }
+
+    // Called if something bad happens.
+    function onFail(message) {
+        alert('Error occured: ' + message);
+    }
+
+    //*******UPLOAD FOTOS TO SERVER btnFotoYEnviar ********
+    function uploadPhoto(imageURI) {
+        //alert('UPLOADING foto...');
+        //alert('IMAGEURI: ' + imageURI);
+
+        //var fileURL = imageURI.toURL();
+        //alert('FILE TO URL: ' + fileURL);
+        //alert('IMAGEURI LASTINDEXOF: ' + imageURI.substr(imageURI.lastIndexOf('/') + 1));
+        var options = new FileUploadOptions();
+        options.fileKey = "file";
+        options.fileName = imageURI.substr(imageURI.lastIndexOf('/') + 1);
+        options.mimeType = "image/jpeg";
+        options.trustAllHosts = true;
+
+        //COMPLETAR PARAMETROS A ENVIAR:
+       //var nlegajo1 = $("#svpNumLegajo").val();
+       //var pass1 = $("#svpContasenia").val();
+       //var obsmobile1 = $("#svpDetIncidente").val();
+       //var calle1 = $("#svpUbCalle").val();
+       //var altura1 = $("#svpUbAltura").val();
+       //var localidad1 = $("#svpUbLocalidad").val();
+
+
+        var ft = new FileTransfer();
+       
+        ft.upload(imageURI, encodeURI("http://192.168.1.102:9911/user/PostUserImage"), win, fail, options);
+    }
+
+    function win(r) {
+        //alert("response: " + r.response);
+        //var x = eval(r.response);
+        //alert("x: " + x);
+        //alert("msg: " + x.Message);
+        //alert('RESPNSE JSON: ' + r.response.Message);
+        //alert("Code = " + r.responseCode);
+        //alert("Response = " + r.response);
+        //thenum1 = r.response.replace(/^\D+/g, '');
+        //alert('SOLO EL NUMERO: ' + thenum.match(/\d+/)[0]);
+        thenum2 = r.response.match(/\d+/)[0];
+        //thenum2 = r.response.Message;
+        //alert("Sent = " + r.bytesSent);
+         alert('SOLO EL NUMERO: ' + thenum2);
+         CrearIncidencia();
+         //conjfotoID = r.response;
+
+    
+    }
+
+    function fail(error) {
+        alert("Error al enviar foto: Codigo = " + error.code);
+    }
+    //**** FIN UPLOAD FOTOS TO SERVER *********************
+
+    function uploadPhotoFORMDATAversion()
+    {
+        //******** POSIBLE FORMA DE ENVIAR MULTIPLES ARCHIVOS CON AJAX POST:
+        //var fd = new FormData();
+        //fd.append("fileToUpload", document.getElementById('fileToUpload').files[0]);
+        //var xhr = new XMLHttpRequest();
+        //xhr.open("POST", "uph.php");
+        //xhr.send(fd);
+
+        //***** INPUT FILES ***********
+        //<form name="uploadImages" method="post" enctype="multipart/form-data">
+        //<input type="file" name="photo[]" value="">
+        //<input type="file" name="photo[]" value="">
+        //<input type="file" name="photo[]" value="">
+        //</form>
+        //var ajaxData = new FormData();
+        //ajaxData.append('action', 'uploadImages');
+        //jQuery.each($("input[name^='photo']")[0].files, function (i, file) {
+        //    ajaxData.append('photo[' + i + ']', file);
+        //});
+        //$.ajax({
+        //    url: URL,
+        //    data: ajaxData,
+        //    cache: false,
+        //    contentType: false,
+        //    processData: false,
+        //    type: 'POST',
+        //    dataType: 'json',
+        //    success: function (data) {
+        //        if (data.status == 'success') {
+        //            location.reload();
+        //        }
+        //    }
+        //});
+        //***CORRECCION ******
+        //var ajaxData = new FormData();
+        //ajaxData.append('action', 'uploadImages');
+        //$.each($("input[type=file]"), function (i, obj) {
+        //    $.each(obj.files, function (j, file) {
+        //        ajaxData.append('photo[' + j + ']', file);
+        //    })
+        //});
+        //***** FIN INPUT FILES ***********
+
+        //**** HIDDEN INPUT FILES
+        //<label for="upload">
+        //  <span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span>
+        //  <input type="file" id="upload" style="display:none">
+        //</label>
+        //**** FIN  HIDDEN INPUT FILES  
+        //**** ASSIGN FILES TO HIDDEN-INPUTFILE / ARRAY
+        //globals.files = [].slice.call(this.files);
+        //var formData = new FormData();
+        //$.each(files, function (ind, val) {
+        //    formData.append('files[]', this);
+        //});
+        //ENVIAR FILES VIA AJAX POST USANDO data: formData,
+        //**** FIN ASSIGN FILES TO HIDDEN-INPUTFILE / ARRAY
+
+        //var formData = new FormData();
+        //formData.append("thefile", file);
+        //xhr.send(formData);
+
+        //OTRA FORMA:
+        //JavaScript 
+        //var ins = document.getElementById('fileToUpload').files.length;
+        //for (var x = 0; x < ins; x++) {
+        //    fd.append("fileToUpload[]", document.getElementById('fileToUpload').files[x]);
+        //}
+
+        //********** MANUALLY FILL FORMDATA
+            //<form id="my_form" enctype="multipart/form-data">
+            //    <input type="file" name="undefined" id="file_1" data-filename="image.jpg">
+            //    <input type="file" name="undefined" id="file_2" data-filename="image2.jpg">
+            //    <button>click</button>
+            //</form>
+
+            //$(document).on("click", "button", function (e) {
+            //    e.preventDefault();
+            //    var inputs = $("#my_form input");
+            //    $.each(inputs, function (obj, v) {
+            //        var file = v.files[0];
+            //        var filename = $(v).attr("data-filename");
+            //        var name = $(v).attr("id");
+            //        myFormData.append(name, file, filename);
+            //    });
+            //    var xhr = new XMLHttpRequest;
+            //    xhr.open('POST', '/echo/html/', true);
+            //    xhr.send(myFormData);
+            //});
+
+        //********** FIN MANUALLY FILL FORMDATA
+        //******** FIN POSIBLE FORMA DE ENVIAR MULTIPLES ARCHIVOS CON AJAX POST:
+
+        //*** ADAPTAR LO QUE VENGA A ESTA FORMA:
+        $.ajax({
+            type: "GET",
+            url: "http://192.168.1.102:9911/user/CrearIncidencia",
+            xhrFields: { withCredentials: true },
+            crossDomain: true,
+            beforeSend: function () { $.mobile.showPageLoadingMsg(); },
+            complete: function () { $.mobile.hidePageLoadingMsg(); },
+            data: {
+                 //AQUI IRIA EL OBJETO FORMDATA
+            },
+            dataType: 'json',
+            success: function (response) {
+                //console.error(JSON.stringify(response));
+                alert('Incidencia creada.');
+            },
+            error: function (xhr, status, error) {
+                alert('Error al crear la incidencia.');
+                //alert(status);
+                //alert(error);
+                //alert(xhr.responseText);
+            }
+        });
+    }
+
+    function CrearIncidencia() {
+
+        //var dataw = $('#cityname').val();
+        //COMPLETAR PARAMETROS A ENVIAR:
+        alert('THENUM: ' + thenum2);
+
+        //$('#submit').bind('click', function (e) {
+            //e.preventDefault();
+            $.ajax({
+                type: "GET",
+                url: "http://192.168.1.102:9911/user/CrearIncidencia",
+                xhrFields: { withCredentials: true },
+                crossDomain: true,
+                beforeSend: function () { $.mobile.showPageLoadingMsg(); },
+                complete: function () { $.mobile.hidePageLoadingMsg(); },
+                data: {
+                    fotoset: thenum2,
+                    nlegajo: nlegajo1,
+                    pass: pass1,
+                    obsmobile: obsmobile1,
+                    calle: calle1,
+                    altura: altura1,
+                    localidad: localidad1
+                },
+                dataType: 'json',
+                success: function (response) {
+                    //console.error(JSON.stringify(response));
+                    alert('Incidencia creada.');
+                },
+                error: function (xhr, status, error) {
+                    alert('Error al crear la incidencia.');
+                    //alert(status);
+                    //alert(error);
+                    //alert(xhr.responseText);
+                }
+            });
+        //});
+    }
+
+    function onPause() {
+        // TODO: This application has been suspended. Save application state here.
+    }
+
+    function onResume() {
+        // TODO: This application has been reactivated. Restore application state here.
+    }
+})();

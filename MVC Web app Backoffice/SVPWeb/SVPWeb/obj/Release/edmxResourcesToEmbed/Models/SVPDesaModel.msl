@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="svpdesaModelStoreContainer" CdmEntityContainer="svpdesaDbEntities">
+    <EntitySetMapping Name="Fotos">
+      <EntityTypeMapping TypeName="svpdesaModel.Foto">
+        <MappingFragment StoreEntitySet="Fotos">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Foto1" ColumnName="Foto1" />
+          <ScalarProperty Name="Ruta1" ColumnName="Ruta1" />
+          <ScalarProperty Name="Foto2" ColumnName="Foto2" />
+          <ScalarProperty Name="Ruta2" ColumnName="Ruta2" />
+          <ScalarProperty Name="Foto3" ColumnName="Foto3" />
+          <ScalarProperty Name="Ruta3" ColumnName="Ruta3" />
+          <ScalarProperty Name="Foto4" ColumnName="Foto4" />
+          <ScalarProperty Name="Ruta4" ColumnName="Ruta4" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Incidencias">
+      <EntityTypeMapping TypeName="svpdesaModel.Incidencia">
+        <MappingFragment StoreEntitySet="Incidencias">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="NlegajoUMobile" ColumnName="NlegajoUMobile" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Zona" ColumnName="Zona" />
+          <ScalarProperty Name="IdPhotoSet" ColumnName="IdPhotoSet" />
+          <ScalarProperty Name="ObsMobile" ColumnName="ObsMobile" />
+          <ScalarProperty Name="Calle" ColumnName="Calle" />
+          <ScalarProperty Name="Altura" ColumnName="Altura" />
+          <ScalarProperty Name="Localidad" ColumnName="Localidad" />
+          <ScalarProperty Name="GPSLat" ColumnName="GPSLat" />
+          <ScalarProperty Name="GPSLon" ColumnName="GPSLon" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UsuarioSVPMobiles">
+      <EntityTypeMapping TypeName="svpdesaModel.UsuarioSVPMobile">
+        <MappingFragment StoreEntitySet="UsuarioSVPMobile">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="NumeroLegajo" ColumnName="NumeroLegajo" />
+          <ScalarProperty Name="Contrasenia" ColumnName="Contrasenia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UsuarioSVPWebs">
+      <EntityTypeMapping TypeName="svpdesaModel.UsuarioSVPWeb">
+        <MappingFragment StoreEntitySet="UsuarioSVPWeb">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="NumeroLegajo" ColumnName="NumeroLegajo" />
+          <ScalarProperty Name="NombreApellido" ColumnName="NombreApellido" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UsuarioSVPWebIncidencias">
+      <EntityTypeMapping TypeName="svpdesaModel.UsuarioSVPWebIncidencia">
+        <MappingFragment StoreEntitySet="UsuarioSVPWebIncidencia">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="NLegSVPWeb" ColumnName="NLegSVPWeb" />
+          <ScalarProperty Name="IdIncidencia" ColumnName="IdIncidencia" />
+          <ScalarProperty Name="ObsSVPWeb" ColumnName="ObsSVPWeb" />
+          <ScalarProperty Name="idSAP" ColumnName="idSAP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

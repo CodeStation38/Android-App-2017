@@ -1,0 +1,225 @@
+﻿@model SVPWeb.Models.UsuarioSVPMobile
+
+<style>
+
+
+</style>
+
+<div class="form-horizontal" style="border:1px solid;border-radius:6px 6px 6px 6px;border-color:#337AB7;background-color:#F6FCFB;">
+    <hr />
+    @*@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.Id)*@
+
+    <div class="form-group">
+        @*@Html.LabelFor(model => model.NumeroLegajo, htmlAttributes: new { @class = "control-label col-md-2", @style = "color:#3C5A84" })*@
+        <label class="control-label col-md-2" style="color:#3C5A84;">Numero de Legajo</label>
+        <div class="col-md-10">
+            @*@Html.EditorFor(model => model.NumeroLegajo, new { htmlAttributes = new { @class = "form-control", @style = "border-color:#337AB7" } })
+                @Html.ValidationMessageFor(model => model.NumeroLegajo, "", new { @class = "text-danger" })*@
+            <input class="form-control" readonly style="border-color:#337AB7;" type="text" id="txtLegajo" value="@Model.NumeroLegajo" /><br />
+        </div>
+    </div>
+
+    <div class="form-group">
+        @*@Html.LabelFor(model => model.Contrasenia, htmlAttributes: new { @class = "control-label col-md-2", @style = "color:#3C5A84" })*@
+        <label class="control-label col-md-2" style="color:#3C5A84;">Apellido y Nombre</label>
+        <div class="col-md-10">
+            @*@Html.EditorFor(model => model.Contrasenia, new { htmlAttributes = new { @class = "form-control", @style = "border-color:#337AB7" } })
+                @Html.ValidationMessageFor(model => model.Contrasenia, "", new { @class = "text-danger" })*@
+            <input class="form-control" readonly style="border-color:#337AB7;" type="text" id="txtApeNom" value="@ViewBag.MobileApeNom" /><br />
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Estado, htmlAttributes: new { @class = "control-label col-md-2", @style = "color:#3C5A84" })
+        <div class="col-md-10">
+            @Html.HiddenFor(model => model.Estado, new { id = "hdnEstadoUMovil" })
+            @Html.DropDownList("selection", new List<SelectListItem>() { new SelectListItem { Text = "Seleccionar", Value = "Seleccionar" }, new SelectListItem { Text = "A", Value = "A" }, new SelectListItem { Text = "I", Value = "I" }, new SelectListItem { Text = "L", Value = "L" } }, new { @id = "ddlEstadoUMovil", @class = "form-control", @onchange = "guardarValorFiltro(this.value)", @style = "border-color:#337AB7" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2" style="color:#3C5A84;">Es Usuario Web</label>
+        <div class="col-md-10">
+            @Html.HiddenFor(model => model.EsUsuarioWeb, new { id = "hdnEsUsuarioWeb" })
+            @if (Model.EsUsuarioWeb == null)
+            {
+                Model.EsUsuarioWeb = false;
+            }
+            @Html.CheckBoxFor(model => model.EsUsuarioWeb.Value, htmlAttributes: new { @id = "chkEsUWeb", @checked = "checked", @style = "border-color:#337AB7", @onchange = "guardarValorCheck(this.value)" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2" style="color:#3C5A84;">Es Usuario Movil</label>
+        <div class="col-md-10">
+            <input type="checkbox" disabled="disabled" checked="checked" style="border-color:#337AB7;">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            @*<input type="submit" value="Guardar cambios" class="btn btn-primary" />*@
+            <button type="button" class="btn btn-primary" id="btnActualizarUWeb" onclick="confirmaCambios();">Guardar cambios</button>
+        </div>
+    </div>
+</div>
+@*}*@
+
+@*<div>
+        @Html.ActionLink("Volver a la grilla", "Index")
+    </div>*@
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.9/jquery-ui.js" type="text/javascript"></script>
+<script type="text/javascript">
+    jQuery(function ($) {
+        var estadofromserver = document.getElementById('hdnEstadoUMovil').value;
+        //alert('ESTADOSERVER: ' + estadofromserver);
+
+        $("#ddlEstadoUMovil > option").each(function () {
+
+            //alert('VALOR: ' + this.value + 'TEXTO: ' + this.text);
+            if (this.text == estadofromserver)
+            {
+                $("#ddlEstadoUMovil").val(this.value);
+            }
+        });
+    });
+
+    function guardarValorFiltro(valor)
+    {
+        if (valor != "Seleccionar")
+        {
+            document.getElementById("hdnEstadoUMovil").value = valor;
+        }
+        return false;
+    }
+
+    function guardarValorCheck(valor)
+    {
+        document.getElementById("hdnEsUsuarioWeb").value = valor;
+        return false;
+    }
+
+    //***** NUEVO ************
+    function confirmaCambios()
+    {
+        if(confirm("Revise sus cambios antes de continuar. Confirma estos cambios?"))
+        {
+            ValidaEdicionUMobile();
+        }
+        //else
+        //{
+        //    alert("CONTINUE EDITANDO...");
+        //}
+    }
+
+
+
+    function ValidaEdicionUMobile()
+    {
+
+        var strinvalidfields = '';
+        var surnameHasValidValue= false;
+        var legajoHasValidValue = false;
+        var estadoUserMobileHasValidValue = false;
+
+
+        //VERIFICA SI SELECCIONO UNA OPCION DEL COMBO, QUE NO SEA "SELECCIONAR"
+        var seleccionddl = document.getElementById('ddlEstadoUMovil').value;
+        if (seleccionddl == "Seleccionar")
+        {
+            //alert ('DEBE SELECCIONAR UNA OPCION');
+            estadoUserMobileHasValidValue = false;
+            strinvalidfields = strinvalidfields + 'Seleccione un estado valido, para este usuario Web. \n\r';
+
+        }
+        else
+        {
+            estadoUserMobileHasValidValue = true;
+        }
+
+        if (estadoUserMobileHasValidValue)
+        {
+            actualizarUsuarioMobile();
+        }
+        else
+        {
+            alert('Por favor, revise los datos ingresados: \n\r' + strinvalidfields);
+        }
+
+    }
+
+
+
+    function actualizarUsuarioMobile()
+    {
+
+        var IDUMobile=@Model.Id;
+
+        var validalegajo=false;
+        var msgerrorlegajo=""
+        var validaapenom=false;
+        var msgerrorapenom="";
+
+        var url = '';
+
+
+        UsuarioSVPMobile = {}
+
+
+        url = "/UsuarioSVPMobiles/SaveUpdate";
+
+        //txtLegajo
+        //ddlEstadoUMovil
+        //chkEsUWeb
+
+        UsuarioSVPMobile["Id"] = IDUMobile;
+        UsuarioSVPMobile["NumeroLegajo"] = $('#txtLegajo').val();
+        UsuarioSVPMobile["NombreApellido"] = $('#txtApeNom').val();
+        UsuarioSVPMobile["Estado"] = document.getElementById('ddlEstadoUMovil').value;
+        //EsUsuarioWeb
+        UsuarioSVPMobile["EsUsuarioWeb"] = document.getElementById("hdnEsUsuarioWeb").value ;
+
+        $.ajax({
+            url: url,
+            data: JSON.stringify({ _UsuarioSVPMobile: UsuarioSVPMobile }),
+            type: "POST",
+            traditional: true,
+            contentType: "application/json; charset=utf-8",
+            cache: false,
+            dataType: "json",
+            success: function (result, status, xhr) {
+
+                var resultFromServer = xhr.getResponseHeader("JSonEdUMobileResultado");
+
+                var str_array = resultFromServer.split('~');
+                var carriagesrettest = "";
+
+                for(var i = 0; i < str_array.length; i++) 
+                {
+                    carriagesrettest = carriagesrettest + "\n\r" + str_array[i].replace(/^\s*/, "").replace(/\s*$/, "");
+                }
+
+                alert(carriagesrettest);
+
+                window.location.reload();
+                $("#dialog2").dialog('close');
+
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                alert('Error inesperado al guardar: ' + textStatus + " .Detalles: " + errorThrown);
+            }
+        });
+
+    }
+
+
+    //***** FIN NUEVO ********
+
+
+</script> 

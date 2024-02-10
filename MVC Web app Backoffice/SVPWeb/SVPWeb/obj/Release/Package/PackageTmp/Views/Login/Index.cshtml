@@ -1,0 +1,297 @@
+﻿@{
+    Layout = "";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="~/Content/niceLogin/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/niceLogin/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/Content/niceLogin/form-elements.css">
+    <link rel="stylesheet" href="~/Content/niceLogin/style.css">
+    <style>
+    #spinner2 {
+            position: fixed;
+            top: 65%;
+            left: 50%;
+        }
+
+    #dvcentro {
+            width: auto;
+            height: auto;
+            /*background-color: red;*/
+
+            position:absolute;
+            top:0;
+            bottom: 0;
+            left:0;
+            right: 0;
+
+            margin-top: 100px;
+            margin-left: 390px;
+        }
+
+    input[type="password"], textarea, textarea.form-control {
+            height: 50px;
+            margin: 0;
+            padding: 0 20px;
+            vertical-align: middle;
+            background: #fff;
+            border: 3px solid #fff;
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 50px;
+            color: #888;
+            -moz-border-radius: 4px;
+            -webkit-border-radius: 4px;
+            border-radius: 4px;
+            -moz-box-shadow: none;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+            -o-transition: all .3s;
+            -moz-transition: all .3s;
+            -webkit-transition: all .3s;
+            -ms-transition: all .3s;
+            transition: all .3s;
+        }
+
+    </style>
+</head>
+<body style="background-image:url(../../Content/niceLogin/img/backgrounds/1.jpg);">
+@*<body style="background-color:greenyellow">*@
+    <div id="dvcentro">
+        <div>
+            <div class="inner-bg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-5 form-box">
+                            <div class="form-top">
+                                <div class="form-top-left">
+                                    <h3>DEMO</h3>
+                                    <p>Seguridad en via publica</p>
+                                </div>
+                                <div class="form-top-right">
+                                </div>
+                            </div>
+                            <div class="form-bottom">
+                                <div class="registration-form">
+                                    <div class="form-group">
+                                        <label id="lblLoginError" style="color:yellow;"></label>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="sr-only" for="form-first-name">Legajo</label>
+                                        <input type="text" id="txtLegajo" name="form-first-name" placeholder="Legajo" class="form-first-name form-control" >
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="sr-only" for="form-last-name">Clave</label>
+                                        <input type="password" id="txtClave" maxlength="8" name="form-last-name" placeholder="Clave" class="form-last-name form-control" >
+                                    </div>
+                                    <div id="dvNuevaClave" class="form-group" style="display:none;">
+                                        <label class="sr-only" for="form-first-name">Legajo</label>
+                                        <input type="text" id="txtNuevaClave" maxlength="8" name="form-first-name" placeholder="Nueva Contraseña" class="form-first-name form-control" >
+                                    </div>
+                                    <button type="button" id="btnLogin" class="btn btn-success">Iniciar sesion</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="spinner2" style="display:none;">
+        <span class="blink_me" style="color:white">Cargando. Por favor espere.</span>
+        <br />
+        <br />
+        <img id="img-spinner" src="~/Content/images/specialloader/ajax-loader.gif" alt="Loading" />
+    </div>
+
+    <!-- Javascript -->
+    <script src="~/Scripts/niceLogin/jquery-1.11.1.min.js"></script>
+    <script src="~/Content/niceLogin/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.9/jquery-ui.js"></script>
+    <script type="text/javascript">
+
+        //txtClave
+        $('#txtClave').keypress(function (event) {
+            if (event.keyCode == 13) {
+                $('#btnLogin').click();
+            }
+        });
+
+        $('#txtNuevaClave').keypress(function (event) {
+            if (event.keyCode == 13) {
+                $('#btnLogin').click();
+            }
+        });
+
+        $('#btnLogin').click(function () {
+            //alert('button was "clicked"');
+            cargaPaginaPrincipal();
+        });
+
+
+        function closeModal() {
+            $('#spinner2').hide();
+        }
+        function blinker2() {
+            $('.blink_me').fadeOut(500);
+            $('.blink_me').fadeIn(500);
+        }
+        setInterval(blinker2, 1000);
+
+        //function quepasa(e)
+        //{
+        //    var key = e.which;
+        //    if (key == 13) // the enter key code
+        //    {
+        //        alert('TECLA ENTER PRESIONADA!');
+        //        return false;
+        //    }
+   
+        //}
+
+
+        function cargaPaginaPrincipal() {
+            $('#spinner2').show();
+            var url = '';
+            LoginData = {}
+            //url = "/Home/Index";
+            url = "/Login/ValidacionUsuario";
+            var nuevaclave = $('#txtNuevaClave').val();
+            if (nuevaclave != "" && nuevaclave != null)
+            {
+                LoginData["NumeroLegajo"] = $('#txtLegajo').val();
+                LoginData["Contrasenia"] = $('#txtNuevaClave').val();
+            }
+            else
+            {
+                LoginData["NumeroLegajo"] = $('#txtLegajo').val();
+                LoginData["Contrasenia"] = $('#txtClave').val();
+            }
+
+
+            $.ajax({
+                url: url,
+                //data: JSON.stringify({ _LoginData: LoginData, _UsuarioSVPWebIncidencia: UsuarioSVPWebIncidencia }),
+                data: JSON.stringify({ _LoginData: LoginData }),
+                type: "POST",
+                traditional: true,
+                contentType: "application/json; charset=utf-8",
+                cache: false,
+                dataType: "html",
+                success: function (result, status, xhr) {
+                    //alert('CONTENIDO DE RESULT: ' + result);
+                    var resultFromServer = xhr.getResponseHeader("JSonResultado");
+                    //alert('CONTENIDO DE XHR HEADER: ' + resultFromServer);
+                    //alert('CONTENIDO DE XHR HEADER: ' + xhr.getResponseHeader("JSonResultado"));
+
+                    //resultFromServer = Split bla bla
+                    //var str = 'Hello, World, etc';
+
+                    if (resultFromServer != null)
+                    {
+                        if (resultFromServer.indexOf('~') > -1)
+                        {
+                            //alert("special char found inside resultFromServer");
+
+                            var str_array = resultFromServer.split('~');
+                            var positionzero = str_array[0].replace(/^\s*/, "").replace(/\s*$/, "");
+                            //for (var i = 0; i < str_array.length; i++) {
+                            //    // Trim the excess whitespace.
+                            //    str_array[i] = str_array[i].replace(/^\s*/, "").replace(/\s*$/, "");
+                            //    // Add additional code here, such as:
+                            //    alert('POSITION AT ' + i + ' IS: ' + str_array[i]);
+                            //}
+                            //alert('POSITION 0: ' + positionzero);
+                            resultFromServer = positionzero;
+                        }
+
+                        //alert('NUEVO resultFromServer: ' + resultFromServer)
+
+                        if (resultFromServer == "SHOWTXTNUEVACLAVE")
+                        {
+                            //alert('NUEVA CLAVE');
+                            //CAMBIE LA CLAVE
+                            //dvNuevaClave
+                            $('#spinner2').hide();
+                            document.getElementById('lblLoginError').innerHTML = 'Ingrese una nueva clave que le sea facil de RECORDAR, de 8 caracteres como maximo. Si olvida esta clave, debera solicitar una nueva a su coordinador/supervisor de Area/Sector/Departamento. Solo puede contener letras y numeros.';
+                            $('#dvNuevaClave').show();
+                            //txtNuevaClave
+                            //LoginData["NumeroLegajo"] = $('#txtLegajo').val();
+                            //LoginData["Contrasenia"] = $('#txtNuevaClave').val();
+                        }
+                        else
+                        {
+                            if (resultFromServer == "OKPASS")
+                            {
+                                //alert('CLAVE CAMBIADA!');
+                                $('#spinner2').hide();
+                                $('#dvNuevaClave').hide();
+                                document.getElementById('lblLoginError').innerHTML = 'Contraseña cambiada con exito.';
+                                window.location.href = "@Url.Action("Index", "Home")";
+                            }
+                            else
+                            {
+                                if (resultFromServer == "OK")
+                                {
+                                    //alert('INGRESO OK');
+                                    $('#spinner2').hide();
+                                    $('#dvNuevaClave').hide();
+
+                                    window.location.href = "@Url.Action("Index", "Home")";
+                                }
+                                else
+                                {
+
+                                    if (resultFromServer == "LEGNOAUTORIZADO")
+                                    {
+                                        //alert('NO AUTORIZADO');
+                                        $('#spinner2').hide();
+                                        $('#dvNuevaClave').hide();
+
+                                        document.getElementById('lblLoginError').innerHTML = 'Legajo no autorizado para iniciar sesion.';
+                                    }
+                                    else
+                                    {
+                                        //alert('LOGIN INCORRECTO');
+                                        //Login INCORRECTO CON MENSAJE APROPIADO:
+                                        $('#spinner2').hide();
+                                        $('#dvNuevaClave').hide();
+                                        document.getElementById('lblLoginError').innerHTML = 'Numero de legajo o contraseña incorrectos.';
+                                    }
+                                }
+                            }
+
+                        }
+                    }
+                    else
+                    {
+                        $('#spinner2').hide();
+                        $('#dvNuevaClave').hide();
+                        document.getElementById('lblLoginError').innerHTML = 'Numero de legajo o contraseña incorrectos.';
+                    }
+
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                   
+                    $('#spinner2').hide();
+                    $('#dvNuevaClave').hide();
+                    alert("Ocurrio un error al iniciar sesion: " + textStatus + ". Detalles: " + errorThrown);
+                }
+            });
+        }
+
+    </script>
+    <!--[if lt IE 10]>
+        <script src="~/Scripts/niceLogin/placeholder.js"></script>
+    <![endif]-->
+</body>
+
+
+
+</html>
+
+
+

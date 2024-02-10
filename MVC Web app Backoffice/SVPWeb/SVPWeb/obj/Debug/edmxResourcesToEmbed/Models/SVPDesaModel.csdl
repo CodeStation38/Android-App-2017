@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="svpdesaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Foto">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Foto1" Type="Int32" />
+    <Property Name="Ruta1" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Foto2" Type="Int32" />
+    <Property Name="Ruta2" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Foto3" Type="Int32" />
+    <Property Name="Ruta3" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Foto4" Type="Int32" />
+    <Property Name="Ruta4" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Incidencias" Relationship="Self.FK_Incidencias_Fotos" FromRole="Fotos" ToRole="Incidencias" />
+  </EntityType>
+  <EntityType Name="Incidencia">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Estado" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NlegajoUMobile" Type="Int32" Nullable="false" />
+    <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Zona" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IdPhotoSet" Type="Int32" Nullable="false" />
+    <Property Name="ObsMobile" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Calle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Altura" Type="Int32" />
+    <Property Name="Localidad" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="GPSLat" Type="Decimal" Precision="10" Scale="6" />
+    <Property Name="GPSLon" Type="Decimal" Precision="10" Scale="6" />
+    <NavigationProperty Name="Foto" Relationship="Self.FK_Incidencias_Fotos" FromRole="Incidencias" ToRole="Fotos" />
+    <NavigationProperty Name="UsuarioSVPWebIncidencias" Relationship="Self.FK_UsuarioSVPWebIncidencia_Incidencias" FromRole="Incidencias" ToRole="UsuarioSVPWebIncidencia" />
+  </EntityType>
+  <EntityType Name="UsuarioSVPMobile">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="NumeroLegajo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Contrasenia" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UsuarioSVPWeb">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="NumeroLegajo" Type="Int32" Nullable="false" />
+    <Property Name="NombreApellido" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="UsuarioSVPWebIncidencia">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NLegSVPWeb" Type="Int32" />
+    <Property Name="IdIncidencia" Type="Int32" />
+    <Property Name="ObsSVPWeb" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="idSAP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Incidencia" Relationship="Self.FK_UsuarioSVPWebIncidencia_Incidencias" FromRole="UsuarioSVPWebIncidencia" ToRole="Incidencias" />
+  </EntityType>
+  <Association Name="FK_Incidencias_Fotos">
+    <End Role="Fotos" Type="Self.Foto" Multiplicity="1" />
+    <End Role="Incidencias" Type="Self.Incidencia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fotos">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Incidencias">
+        <PropertyRef Name="IdPhotoSet" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UsuarioSVPWebIncidencia_Incidencias">
+    <End Role="Incidencias" Type="Self.Incidencia" Multiplicity="0..1" />
+    <End Role="UsuarioSVPWebIncidencia" Type="Self.UsuarioSVPWebIncidencia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Incidencias">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UsuarioSVPWebIncidencia">
+        <PropertyRef Name="IdIncidencia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="svpdesaDbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Fotos" EntityType="Self.Foto" />
+    <EntitySet Name="Incidencias" EntityType="Self.Incidencia" />
+    <EntitySet Name="UsuarioSVPMobiles" EntityType="Self.UsuarioSVPMobile" />
+    <EntitySet Name="UsuarioSVPWebs" EntityType="Self.UsuarioSVPWeb" />
+    <EntitySet Name="UsuarioSVPWebIncidencias" EntityType="Self.UsuarioSVPWebIncidencia" />
+    <AssociationSet Name="FK_Incidencias_Fotos" Association="Self.FK_Incidencias_Fotos">
+      <End Role="Fotos" EntitySet="Fotos" />
+      <End Role="Incidencias" EntitySet="Incidencias" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UsuarioSVPWebIncidencia_Incidencias" Association="Self.FK_UsuarioSVPWebIncidencia_Incidencias">
+      <End Role="Incidencias" EntitySet="Incidencias" />
+      <End Role="UsuarioSVPWebIncidencia" EntitySet="UsuarioSVPWebIncidencias" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

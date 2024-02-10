@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="cce4e5a340274df8ae1873488f3b4988" Name="Diagram1">
+        <EntityTypeShape EntityType="SVPWebModel.Foto" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SVPWebModel.Incidencia" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="SVPWebModel.Legajo" Width="1.5" PointX="5.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SVPWebModel.PermisosUsuario" Width="1.5" PointX="0.75" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="SVPWebModel.Sesione" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SVPWebModel.SVPPermiso" Width="1.5" PointX="7.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SVPWebModel.UsuarioSVPMobile" Width="1.5" PointX="7.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SVPWebModel.UsuarioSVPWeb" Width="1.5" PointX="3" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SVPWebModel.UsuarioSVPWebIncidencia" Width="1.5" PointX="5.25" PointY="1.875" IsExpanded="true" />
+        <AssociationConnector Association="SVPWebModel.FK_Incidencias_Fotos" ManuallyRouted="false" />
+        <AssociationConnector Association="SVPWebModel.FK_UsuarioSVPWebIncidencia_Incidencias" ManuallyRouted="false" />
+        <AssociationConnector Association="SVPWebModel.FK_UsuarioSVPWeb_PermisosUsuario" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

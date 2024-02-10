@@ -1,0 +1,274 @@
+﻿@using PagedList.Mvc;
+@model PagedList.IPagedList<SVPWeb.Models.PermisosUsuario>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.9/themes/blitzer/jquery-ui.css" rel="stylesheet" />
+<link href="~/Content/footable/footable.standalone.css" rel="stylesheet" />
+<link href="~/Content/footable/footable.core.bootstrap.css" rel="stylesheet" />
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<style>
+    #spinner3 {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+    }
+
+    body {
+        font-family: Arial;
+        font-size: 10pt;
+        /*margin-top:70px;*/
+        margin-top: 10px;
+    }
+
+    table {
+        /*border: 1px solid #ccc;*/
+        /*border-collapse: collapse;*/
+        background-color: #fff;
+        background-color: #E8EFD6;
+    }
+
+        table th {
+            background-color: #B8DBFD;
+            color: #333;
+            font-weight: bold;
+            /*background: #3276B1 50% 50% repeat-x;*/
+            background: blueviolet 50% 50% repeat-x;
+            /*border: 1px solid #33CCFF;*/
+            color: #ffffff;
+            font-weight: bold;
+        }
+
+        table th, table td {
+            padding: 5px;
+            /*border: 1px solid #ccc;*/
+        }
+
+        table, table table td {
+            /*border: 0px solid #ccc;*/
+        }
+
+    tr:hover {
+        background-color: #ffff99;
+    }
+
+    tr.selected {
+        background-color: #9DCE89;
+    }
+</style>
+
+<h3 style="color:blueviolet">Lista general de permisos</h3>
+
+@{
+    var esteusuarioweb = (SVPWeb.Models.UsuarioSVPWeb)ViewBag.PermisosReadGrid;
+    if (esteusuarioweb.PermisosUsuario.GrillaPermisosR == true)
+    {
+        <table id="PermisosGrid" class="table table2excel">
+            <thead>
+                <tr>
+                    <th data-type="number">ID</th>
+                    <th data-type="number">Legajo</th>
+                    <th data-type="text">Incidencias(R)</th>
+                    <th data-type="text">Incidencias(R/W)</th>
+                    <th data-type="text">Usuarios Web(R)</th>
+                    <th data-type="text">Usuarios Web(R/W)</th>
+                    <th data-type="text">Usuarios Moviles(R)</th>
+                    <th data-type="text">Usuarios Moviles(R/W)</th>
+                    <th data-type="text">Lista de Permisos(R)</th>
+                    <th data-type="text">Estado</th>
+                    <th data-type="date">Fecha Creacion</th>
+                    <th data-type="date">Ultima Modificacion</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (SVPWeb.Models.PermisosUsuario item in Model)
+                {
+                    <tr data-expanded="false">
+                        <td>@item.Id</td>
+                        <td>@item.NLegajoUsuario</td>
+                        @*<td>@item.InciR</td>*@
+                        @if (item.InciR != null)
+                        {
+                            if (item.InciR == true)
+                            {
+                                <td>Si</td>
+                            }
+                            else
+                            {
+                                <td>No</td>
+                            }
+                        }
+
+                        @*<td>@item.InciRW</td>*@
+                        @if (item.InciRW != null)
+                        {
+                            if (item.InciRW == true)
+                            {
+                                <td>Si</td>
+                            }
+                            else
+                            {
+                                <td>No</td>
+                            }
+                        }
+
+                        @*<td>@item.WebR</td>*@
+                        @if (item.WebR != null)
+                        {
+                            if (item.WebR == true)
+                            {
+                                <td>Si</td>
+                            }
+                            else
+                            {
+                                <td>No</td>
+                            }
+                        }
+
+                        @*<td>@item.WebRW</td>*@
+                        @if (item.WebRW != null)
+                        {
+                            if (item.WebRW == true)
+                            {
+                                <td>Si</td>
+                            }
+                            else
+                            {
+                                <td>No</td>
+                            }
+                        }
+
+                        @*<td>@item.MobileR</td>*@
+                        @if (item.MobileR != null)
+                        {
+                            if (item.MobileR == true)
+                            {
+                                <td>Si</td>
+                            }
+                            else
+                            {
+                                <td>No</td>
+                            }
+                        }
+
+                        @*<td>@item.MobileRW</td>*@
+                        @if (item.MobileRW != null)
+                        {
+                            if (item.MobileRW == true)
+                            {
+                                <td>Si</td>
+                            }
+                            else
+                            {
+                                <td>No</td>
+                            }
+                        }
+
+                        @*<td>@item.GrillaPermisosR</td>*@
+                        @if (item.GrillaPermisosR != null)
+                        {
+                            if (item.GrillaPermisosR == true)
+                            {
+                                <td>Si</td>
+                            }
+                            else
+                            {
+                                <td>No</td>
+                            }
+                        }
+                        <td>@item.Estado</td>
+                        <td>@item.FechaCreacion</td>
+                        <td>@item.UltimaModificacion</td>
+                    </tr>
+                }
+            <tbody>
+        </table>
+    }
+    else
+    {
+        if (esteusuarioweb.PermisosUsuario.GrillaPermisosR == false)
+        {
+            <h3 style="color:blueviolet">Su legajo no posee privilegios suficientes para acceder a esta informacion.</h3>
+        }
+        else
+        {
+            <h3 style="color:blueviolet">Ha ocurrido un error inesperado. Contacte al administrador del sistema.</h3>
+        }
+    }
+
+}
+
+
+
+
+
+
+
+
+<br />
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+@*@Html.PagedListPager(Model, page => Url.Action("Index",new { page,sortOrder = ViewBag.CurrentSort,currentFilter=ViewBag.CurrentFilter}))*@
+@Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+
+    <div id="spinner3" style="display:none;">
+        <span class="blink_me">Cargando. Por favor espere.</span>
+        <br />
+        <br />
+        <img id="img-spinner" src="~/Content/images/specialloader/ajax-loader.gif" alt="Loading" />
+    </div>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.9/jquery-ui.js" type="text/javascript"></script>
+    <script src="~/Scripts/DataTables/jquery.dataTables.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        setTimeout(closeModal, 6000);
+        $(window).on('load', function () {
+            $('#spinner3').show();
+
+            var someStringValue = '@(ViewBag.Genio)';
+            //alert('NUEVA LBL: ' + someStringValue);
+            document.getElementById('lblUserWebName').innerHTML = 'Bienvenido ' + someStringValue;
+        });
+        function closeModal()
+        {
+            $('#spinner3').hide();
+        }
+        function blinker2() {
+            $('.blink_me').fadeOut(500);
+            $('.blink_me').fadeIn(500);
+        }
+        setInterval(blinker2, 1000);
+    </script>
+    <script src="~/Scripts/lightbox/lightbox.js" type="text/javascript"></script>
+    <script src="~/Scripts/footable/footable.js" type="text/javascript"></script>
+    <script src="~/Scripts/table2excel/jquery.table2excel.js"></script>
+    <script type="text/javascript">
+    function blinker() {
+        $('.blink_me').fadeOut(500);
+        $('.blink_me').fadeIn(500);
+    }
+    setInterval(blinker, 1000);
+    jQuery(function ($) {
+        //$('.table').footable();
+        $('.table').footable(
+            //{
+                //    "paging": {
+                //        "size":2
+                //    }
+            //}
+            );
+    });
+
+    $("tr").click(function () {
+        $(this).addClass("selected").siblings().removeClass("selected");
+    });
+
+    var table = $('#PermisosGrid').dataTable({
+        "paging": false,
+        "ordering": false,
+        "info": false,
+        "searching": false
+    });
+ </script>

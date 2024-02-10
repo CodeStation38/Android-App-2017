@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="svpdesaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Fotos">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Foto1" Type="int" />
+    <Property Name="Ruta1" Type="varchar" MaxLength="150" />
+    <Property Name="Foto2" Type="int" />
+    <Property Name="Ruta2" Type="varchar" MaxLength="150" />
+    <Property Name="Foto3" Type="int" />
+    <Property Name="Ruta3" Type="varchar" MaxLength="150" />
+    <Property Name="Foto4" Type="int" />
+    <Property Name="Ruta4" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="Incidencias">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Estado" Type="varchar" MaxLength="2" Nullable="false" />
+    <Property Name="NlegajoUMobile" Type="int" Nullable="false" />
+    <Property Name="Fecha" Type="date" Nullable="false" />
+    <Property Name="Zona" Type="varchar" MaxLength="50" />
+    <Property Name="IdPhotoSet" Type="int" Nullable="false" />
+    <Property Name="ObsMobile" Type="varchar" MaxLength="250" />
+    <Property Name="Calle" Type="varchar" MaxLength="50" />
+    <Property Name="Altura" Type="int" />
+    <Property Name="Localidad" Type="varchar" MaxLength="250" />
+    <Property Name="GPSLat" Type="numeric" Precision="10" Scale="6" />
+    <Property Name="GPSLon" Type="numeric" Precision="10" Scale="6" />
+  </EntityType>
+  <EntityType Name="UsuarioSVPMobile">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="NumeroLegajo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Contrasenia" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UsuarioSVPWeb">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="NumeroLegajo" Type="int" Nullable="false" />
+    <Property Name="NombreApellido" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="UsuarioSVPWebIncidencia">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NLegSVPWeb" Type="int" />
+    <Property Name="IdIncidencia" Type="int" />
+    <Property Name="ObsSVPWeb" Type="varchar" MaxLength="250" />
+    <Property Name="idSAP" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_Incidencias_Fotos">
+    <End Role="Fotos" Type="Self.Fotos" Multiplicity="1" />
+    <End Role="Incidencias" Type="Self.Incidencias" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fotos">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Incidencias">
+        <PropertyRef Name="IdPhotoSet" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <!--Errors Found During Generation:
+warning 6035: The relationship 'FK_Incidencias_UsuarioSVPMobile' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="FK_Incidencias_UsuarioSVPMobile" />-->
+  <Association Name="FK_UsuarioSVPWebIncidencia_Incidencias">
+    <End Role="Incidencias" Type="Self.Incidencias" Multiplicity="0..1" />
+    <End Role="UsuarioSVPWebIncidencia" Type="Self.UsuarioSVPWebIncidencia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Incidencias">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UsuarioSVPWebIncidencia">
+        <PropertyRef Name="IdIncidencia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <!--Errors Found During Generation:
+warning 6035: The relationship 'FK_UsuarioSVPWebIncidencia_UsuarioSVPWeb' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="FK_UsuarioSVPWebIncidencia_UsuarioSVPWeb" />-->
+  <EntityContainer Name="svpdesaModelStoreContainer">
+    <EntitySet Name="Fotos" EntityType="Self.Fotos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Incidencias" EntityType="Self.Incidencias" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UsuarioSVPMobile" EntityType="Self.UsuarioSVPMobile" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UsuarioSVPWeb" EntityType="Self.UsuarioSVPWeb" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UsuarioSVPWebIncidencia" EntityType="Self.UsuarioSVPWebIncidencia" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Incidencias_Fotos" Association="Self.FK_Incidencias_Fotos">
+      <End Role="Fotos" EntitySet="Fotos" />
+      <End Role="Incidencias" EntitySet="Incidencias" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UsuarioSVPWebIncidencia_Incidencias" Association="Self.FK_UsuarioSVPWebIncidencia_Incidencias">
+      <End Role="Incidencias" EntitySet="Incidencias" />
+      <End Role="UsuarioSVPWebIncidencia" EntitySet="UsuarioSVPWebIncidencia" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

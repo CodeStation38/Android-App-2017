@@ -1,0 +1,49 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-camera": {
+            "PACKAGE_NAME": "io.cordova.myapp120629"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "io.cordova.myapp120629"
+        },
+        "cordova-plugin-dialogs": {
+            "PACKAGE_NAME": "io.cordova.myapp120629"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "io.cordova.myapp120629"
+        },
+        "cordova-plugin-file-transfer": {
+            "PACKAGE_NAME": "io.cordova.myapp120629"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "io.cordova.myapp120629"
+        },
+        "cordova.custom.plugins.exitapp": {
+            "PACKAGE_NAME": "io.cordova.myapp120629"
+        },
+        "cordova.plugins.diagnostic": {
+            "PACKAGE_NAME": "io.cordova.myapp120629"
+        },
+        "cordova-plugin-request-location-accuracy": {
+            "PACKAGE_NAME": "io.cordova.myapp120629"
+        },
+        "cordova-plugin-geolocation": {
+            "PACKAGE_NAME": "io.cordova.myapp120629"
+        },
+        "cordova-sqlite-storage": {
+            "PACKAGE_NAME": "io.cordova.myapp120629"
+        }
+    },
+    "dependent_plugins": {
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "io.cordova.myapp120629"
+        }
+    }
+}

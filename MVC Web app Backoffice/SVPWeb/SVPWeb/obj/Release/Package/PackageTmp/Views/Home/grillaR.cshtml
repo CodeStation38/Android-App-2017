@@ -1,0 +1,37 @@
+﻿@using PagedList.Mvc;
+@model PagedList.IPagedList<SVPWeb.Models.Incidencia>
+
+<table id="CustomerGrid" class="table table2excel" data-sorting="true">
+    <thead>
+        <tr>
+            <th data-type="number">ID</th>
+            <th data-type="text" data-breakpoints="xs sm">Estado</th>
+            <th data-type="number" data-breakpoints="xs sm md">Legajo</th>
+            <th data-type="date" data-breakpoints="xs sm md" data-format-string="MMMM Do YYYY">Fecha</th>
+            <th data-type="text">Detalles</th>
+            <th data-type="text" data-breakpoints="xs sm">Zona</th>
+            <th data-type="text" data-breakpoints="xs sm md">Calle</th>
+            <th data-type="text" data-breakpoints="xs sm md">Altura</th>
+            <th data-type="text" data-breakpoints="xs sm md">Localidad</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (SVPWeb.Models.Incidencia incidencia in Model)
+            {
+            <tr data-expanded="false">
+                <td>@incidencia.Id</td>
+                <td>@incidencia.Estado</td>
+                <td>@incidencia.NlegajoUMobile</td>
+                <td>@incidencia.Fecha</td>
+                <td>@incidencia.ObsMobile</td>
+                <td>@incidencia.Zona</td>
+                <td>@incidencia.Calle</td>
+                <td>@incidencia.Altura</td>
+                <td>@incidencia.Localidad</td>
+            </tr>
+        }
+    </tbody>
+</table>
+<br />
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+@Html.PagedListPager(Model, page => Url.Action("Index", new { page }))

@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SVPWebModelStoreContainer" CdmEntityContainer="svpdesaEntities16">
+    <EntitySetMapping Name="Fotos">
+      <EntityTypeMapping TypeName="SVPWebModel.Foto">
+        <MappingFragment StoreEntitySet="Fotos">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Foto1" ColumnName="Foto1" />
+          <ScalarProperty Name="Thumbnail1" ColumnName="Thumbnail1" />
+          <ScalarProperty Name="Ruta1" ColumnName="Ruta1" />
+          <ScalarProperty Name="Foto2" ColumnName="Foto2" />
+          <ScalarProperty Name="Thumbnail2" ColumnName="Thumbnail2" />
+          <ScalarProperty Name="Ruta2" ColumnName="Ruta2" />
+          <ScalarProperty Name="Foto3" ColumnName="Foto3" />
+          <ScalarProperty Name="Thumbnail3" ColumnName="Thumbnail3" />
+          <ScalarProperty Name="Ruta3" ColumnName="Ruta3" />
+          <ScalarProperty Name="Foto4" ColumnName="Foto4" />
+          <ScalarProperty Name="Thumbnail4" ColumnName="Thumbnail4" />
+          <ScalarProperty Name="Ruta4" ColumnName="Ruta4" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Incidencias">
+      <EntityTypeMapping TypeName="SVPWebModel.Incidencia">
+        <MappingFragment StoreEntitySet="Incidencias">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="NlegajoUMobile" ColumnName="NlegajoUMobile" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Zona" ColumnName="Zona" />
+          <ScalarProperty Name="IdPhotoSet" ColumnName="IdPhotoSet" />
+          <ScalarProperty Name="ObsMobile" ColumnName="ObsMobile" />
+          <ScalarProperty Name="Calle" ColumnName="Calle" />
+          <ScalarProperty Name="Altura" ColumnName="Altura" />
+          <ScalarProperty Name="Localidad" ColumnName="Localidad" />
+          <ScalarProperty Name="GPSLat" ColumnName="GPSLat" />
+          <ScalarProperty Name="GPSLon" ColumnName="GPSLon" />
+          <ScalarProperty Name="UltimaModificacion" ColumnName="UltimaModificacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Legajos">
+      <EntityTypeMapping TypeName="SVPWebModel.Legajo">
+        <MappingFragment StoreEntitySet="Legajos">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nlegajo" ColumnName="nlegajo" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="apellido" ColumnName="apellido" />
+          <ScalarProperty Name="sector" ColumnName="sector" />
+          <ScalarProperty Name="superiorinmediato" ColumnName="superiorinmediato" />
+          <ScalarProperty Name="Rol" ColumnName="Rol" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PermisosUsuarios">
+      <EntityTypeMapping TypeName="SVPWebModel.PermisosUsuario">
+        <MappingFragment StoreEntitySet="PermisosUsuario">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="NLegajoUsuario" ColumnName="NLegajoUsuario" />
+          <ScalarProperty Name="InciR" ColumnName="InciR" />
+          <ScalarProperty Name="InciRW" ColumnName="InciRW" />
+          <ScalarProperty Name="WebR" ColumnName="WebR" />
+          <ScalarProperty Name="WebRW" ColumnName="WebRW" />
+          <ScalarProperty Name="MobileR" ColumnName="MobileR" />
+          <ScalarProperty Name="MobileRW" ColumnName="MobileRW" />
+          <ScalarProperty Name="GrillaPermisosR" ColumnName="GrillaPermisosR" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="UltimaModificacion" ColumnName="UltimaModificacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sesiones">
+      <EntityTypeMapping TypeName="SVPWebModel.Sesione">
+        <MappingFragment StoreEntitySet="Sesiones">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="LegajoId" ColumnName="LegajoId" />
+          <ScalarProperty Name="Inicio" ColumnName="Inicio" />
+          <ScalarProperty Name="Fin" ColumnName="Fin" />
+          <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SVPPermisos">
+      <EntityTypeMapping TypeName="SVPWebModel.SVPPermiso">
+        <MappingFragment StoreEntitySet="SVPPermisos">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UsuarioSVPMobiles">
+      <EntityTypeMapping TypeName="SVPWebModel.UsuarioSVPMobile">
+        <MappingFragment StoreEntitySet="UsuarioSVPMobile">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="NumeroLegajo" ColumnName="NumeroLegajo" />
+          <ScalarProperty Name="Contrasenia" ColumnName="Contrasenia" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="userUUID" ColumnName="userUUID" />
+          <ScalarProperty Name="EsUsuarioWeb" ColumnName="EsUsuarioWeb" />
+          <ScalarProperty Name="UltimaModificacion" ColumnName="UltimaModificacion" />
+          <ScalarProperty Name="FechaCreacionUMovil" ColumnName="FechaCreacionUMovil" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UsuarioSVPWebs">
+      <EntityTypeMapping TypeName="SVPWebModel.UsuarioSVPWeb">
+        <MappingFragment StoreEntitySet="UsuarioSVPWeb">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="NumeroLegajo" ColumnName="NumeroLegajo" />
+          <ScalarProperty Name="NombreApellido" ColumnName="NombreApellido" />
+          <ScalarProperty Name="Contrasenia" ColumnName="Contrasenia" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="UltimaModificacion" ColumnName="UltimaModificacion" />
+          <ScalarProperty Name="IdPermisos" ColumnName="IdPermisos" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UsuarioSVPWebIncidencias">
+      <EntityTypeMapping TypeName="SVPWebModel.UsuarioSVPWebIncidencia">
+        <MappingFragment StoreEntitySet="UsuarioSVPWebIncidencia">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="NLegSVPWeb" ColumnName="NLegSVPWeb" />
+          <ScalarProperty Name="IdIncidencia" ColumnName="IdIncidencia" />
+          <ScalarProperty Name="ObsSVPWeb" ColumnName="ObsSVPWeb" />
+          <ScalarProperty Name="idSAP" ColumnName="idSAP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,91 @@
+﻿@model SVPWeb.Models.PermisosUsuario
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PermisosUsuario</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NLegajoUsuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NLegajoUsuario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InciR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InciR)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InciRW)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InciRW)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WebR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WebR)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WebRW)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WebRW)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MobileR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MobileR)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MobileRW)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MobileRW)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaCreacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaCreacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UltimaModificacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UltimaModificacion)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

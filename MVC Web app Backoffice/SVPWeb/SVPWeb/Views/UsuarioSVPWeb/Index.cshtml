@@ -1,0 +1,299 @@
+﻿@using PagedList.Mvc;
+@model PagedList.IPagedList<SVPWeb.Models.UsuarioSVPWeb>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.9/themes/blitzer/jquery-ui.css" rel="stylesheet" />
+<link href="~/Content/footable/footable.standalone.css" rel="stylesheet" />
+<link href="~/Content/footable/footable.core.bootstrap.css" rel="stylesheet" />
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<style>
+    #spinner {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+    }
+
+    body {
+        font-family: Arial;
+        font-size: 10pt;
+        margin-top: 10px;
+    }
+
+    table {
+        /*border: 1px solid #ccc;
+        border-collapse: collapse;*/
+        /*background-color: #fff;*/
+        background-color: #FDEDD2;
+        border-radius: 6px 6px 6px 6px;
+    }
+
+        table th {
+            background-color: #FDEDD2;
+            color: #333;
+            font-weight: bold;
+            /*background: #3276B1 50% 50% repeat-x;*/
+            background: #FF5604 50% 50% repeat-x;
+            /*border: 1px solid #33CCFF;*/
+            color: #ffffff;
+            font-weight: bold;
+            /*border-radius:6px 6px 6px 6px;*/
+        }
+
+        table th, table td {
+            padding: 5px;
+            /*border: 1px solid #ccc;*/
+        }
+
+        table, table table td {
+            /*border: 0px solid #ccc;*/
+        }
+
+    tr:hover {
+        background-color: #ffff99;
+    }
+
+    tr.selected {
+        background-color: #9DCE89;
+    }
+</style>
+<h3 style="color:#FF5604">Administración de Usuarios Web</h3>
+
+@{
+    var esteusuarioweb = (SVPWeb.Models.UsuarioSVPWeb)ViewBag.PermisosAdWeb;
+    if (esteusuarioweb.PermisosUsuario.WebR == true && esteusuarioweb.PermisosUsuario.WebRW == false)
+    {
+        <table id="UsuarioWebGrid" class="table table2excel" data-sorting="true">
+            <thead>
+                <tr>
+                    <th data-type="number">ID</th>
+                    <th data-type="number">Legajo</th>
+                    <th data-type="text">Nombre completo</th>
+                    <th data-type="text" data-breakpoints="xs sm md">Estado</th>
+                    <th data-type="text" data-breakpoints="xs sm md">Fecha Creacion</th>
+                    <th data-type="text" data-breakpoints="xs sm md">Ultima Modificacion</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (SVPWeb.Models.UsuarioSVPWeb item in Model)
+                {
+                    <tr data-expanded="false">
+                        <td>@item.Id</td>
+                        <td>@item.NumeroLegajo</td>
+                        <td>@item.NombreApellido</td>
+                        <td>@item.Estado</td>
+                        <td>@item.FechaCreacion</td>
+                        <td>@item.UltimaModificacion</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        if (esteusuarioweb.PermisosUsuario.WebRW == true)
+        {
+            <p>
+                <button type="button" class="btn btn-warning" id="btnNewUWeb" onclick="crearNuevoUWeb();">Nuevo</button>
+            </p>
+            <table id="UsuarioWebGrid" class="table table2excel" data-sorting="true">
+                <thead>
+                    <tr>
+                        <th data-type="number">ID</th>
+                        <th data-type="number">Legajo</th>
+                        <th data-type="text">Nombre completo</th>
+                        <th data-type="text" data-breakpoints="xs sm md">Estado</th>
+                        <th data-type="text" data-breakpoints="xs sm md">Fecha Creacion</th>
+                        <th data-type="text" data-breakpoints="xs sm md">Ultima Modificacion</th>
+                        <th data-type="text" data-breakpoints="xs sm md">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (SVPWeb.Models.UsuarioSVPWeb item in Model)
+                    {
+                        <tr data-expanded="false">
+                            <td>@item.Id</td>
+                            <td>@item.NumeroLegajo</td>
+                            <td>@item.NombreApellido</td>
+                            <td>@item.Estado</td>
+                            <td>@item.FechaCreacion</td>
+                            <td>@item.UltimaModificacion</td>
+                            <td><a class="details" href="javascript:;">Editar</a></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <h3 style="color:#FF5604">Su legajo no posee privilegios suficientes para acceder a esta informacion.</h3>
+        }
+    }
+
+}
+
+<br />
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+@Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+
+<div id="dialog2" style="display: none"></div>
+<div id="dialog3" style="display: none"></div>
+
+    <div id="spinner" style="display:none;">
+        <span class="blink_me">Cargando. Por favor espere.</span>
+        <br />
+        <br />
+        <img id="img-spinner" src="~/Content/images/specialloader/ajax-loader.gif" alt="Loading" />
+    </div>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.9/jquery-ui.js" type="text/javascript"></script>
+    <script src="~/Scripts/DataTables/jquery.dataTables.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    setTimeout(closeModal, 6000);
+    $(window).on('load', function () {
+        $('#spinner').show();
+
+        var someStringValue = '@(ViewBag.namestring)';
+        //alert('NUEVA LBL: ' + someStringValue);
+        document.getElementById('lblUserWebName').innerHTML = 'Bienvenido ' + someStringValue;
+    });
+    function closeModal() {
+        $('#spinner').hide();
+    }
+    function blinker2() {
+        $('.blink_me').fadeOut(500);
+        $('.blink_me').fadeIn(500);
+    }
+    setInterval(blinker2, 1000);
+</script>
+<script src="~/Scripts/lightbox/lightbox.js" type="text/javascript"></script>
+<script src="~/Scripts/footable/footable.js" type="text/javascript"></script>
+<script src="~/Scripts/table2excel/jquery.table2excel.js"></script>
+<script type="text/javascript">
+    function blinker() {
+        $('.blink_me').fadeOut(500);
+        $('.blink_me').fadeIn(500);
+    }
+    setInterval(blinker, 1000);
+    jQuery(function ($) {
+        //$('.table').footable();
+        $('.table').footable(
+            //{
+            //    "paging": {
+            //        "size":2
+            //    }
+            //}
+            );
+    });
+
+    $("tr").click(function () {
+        $(this).addClass("selected").siblings().removeClass("selected");
+    });
+
+    var table = $('#UsuarioWebGrid').dataTable({
+        "paging": false,
+        "ordering": false,
+        "info": false,
+        "searching": false
+    });
+
+    $(function () { 
+
+        $("#UsuarioWebGrid .details").click(function () {
+            //var loading2 = $(".loading");
+            //ShowProgress();
+            $('#spinner').show();
+
+            var id = $(this).closest("tr").find("td").eq(0).html();
+            //alert('UsuarioWebID en tr td eq(0): ' + id);
+
+            $.ajax({
+                type: "POST",
+                url: "/UsuarioSVPWeb/Editar",
+                data: '{id: "' + id + '" }',
+                contentType: "application/json; charset=utf-8",
+                dataType: "html",
+                success: function (response) {
+                    $('#dialog2').html(response);
+                    $('#dialog2').dialog('open');
+                    $('#spinner').hide();
+                    //loading.hide();
+                    //$("#progressbar").hide();
+
+                },
+                failure: function (response) {
+                    //loading.hide();
+                    //$('#spinner').hide();
+                    alert('Error al editar usuario: ' + response.responseText);
+
+                },
+                error: function (response) {
+                    //loading.hide();
+                    $('#spinner').hide();
+                    alert('Error inesperado: ' + response.responseText);
+                }
+            });
+        });
+    });
+
+    $("#dialog2").dialog({
+        autoOpen: false,
+        modal: true,
+        width: 1100,
+        height: 600,
+        title: "Edicion de Usuario Web",
+        draggable: false,
+        resizable: false,
+        close: function () {
+            window.location.reload();
+            $("#dialog2").dialog('close');
+        },
+    });
+
+
+    $("#dialog3").dialog({
+        autoOpen: false,
+        modal: true,
+        width: 1100,
+        height: 400,
+        title: "Creacion de Usuario Web",
+        draggable: false,
+        resizable: false
+    });
+
+
+    function crearNuevoUWeb()
+    {
+
+        $('#spinner').show();
+
+        $.ajax({
+            type: "POST",
+            url: "/UsuarioSVPWeb/Create",
+            //data: '{id: "' + id + '" }',
+            contentType: "application/json; charset=utf-8",
+            dataType: "html",
+            success: function (response) {
+                $('#dialog3').html(response);
+                $('#dialog3').dialog('open');
+                $('#spinner').hide();
+                //loading.hide();
+                //$("#progressbar").hide();
+
+            },
+            failure: function (response) {
+                //loading.hide();
+                //$('#spinner').hide();
+                alert('Ocurrio un error al crear usuario web: ' + response.responseText);
+
+            },
+            error: function (response) {
+                //loading.hide();
+                $('#spinner').hide();
+                alert('Ocurrio un error inesperado: ' + response.responseText);
+            }
+        });
+    }
+    </script>

@@ -1,0 +1,370 @@
+﻿@using PagedList.Mvc;
+@*@model IEnumerable<SVPWeb.Models.Incidencia>*@
+@model PagedList.IPagedList<SVPWeb.Models.Incidencia>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.9/themes/blitzer/jquery-ui.css" rel="stylesheet" />
+<link href="~/Content/lightbox/lightbox.min.css" rel="stylesheet" />
+<link href="~/Content/footable/footable.standalone.css" rel="stylesheet" />
+<link href="~/Content/footable/footable.core.bootstrap.css" rel="stylesheet" />
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="~/Content/Site.css" rel="stylesheet" />
+
+<style>
+    #spinner2 {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+    }
+
+
+    body {
+        font-family: Arial;
+        font-size: 10pt;
+        /*margin-top:70px;*/
+        margin-top: 10px;
+    }
+
+    table {
+        /*border: 1px solid #ccc;*/
+        /*border-collapse: collapse;*/
+        background-color: #fff;
+        background-color: #E8EFD6;
+    }
+
+        table th {
+            background-color: #B8DBFD;
+            color: #333;
+            font-weight: bold;
+            /*background: #3276B1 50% 50% repeat-x;*/
+            background: #71A94A 50% 50% repeat-x;
+            /*border: 1px solid #33CCFF;*/
+            color: #ffffff;
+            font-weight: bold;
+        }
+
+        table th, table td {
+            padding: 5px;
+            /*border: 1px solid #ccc;*/
+        }
+
+        table, table table td {
+            /*border: 0px solid #ccc;*/
+        }
+
+    tr:hover {
+        background-color: #ffff99;
+    }
+
+    tr.selected {
+        background-color: #9DCE89;
+    }
+</style>
+
+<h3 style="color:darkgreen">Administración de Incidencias Moviles</h3>
+
+@{
+    var esteusuarioweb = (SVPWeb.Models.UsuarioSVPWeb)ViewBag.PermisosUWeb;
+    if (esteusuarioweb.PermisosUsuario.InciR == true && esteusuarioweb.PermisosUsuario.InciRW == false)
+    {
+        <div id="theGrid">
+            @Html.Partial("filtros")
+        </div>
+
+        <div id="theGrid">
+            @Html.Partial("grillaR", Model)
+        </div>
+    }
+    else
+    {
+       
+        if (esteusuarioweb.PermisosUsuario.InciRW == true)
+        {
+            <div id="theGrid">
+                @Html.Partial("filtros")
+            </div>
+
+            <div id="theGrid">
+                @Html.Partial("grillaRW", Model)
+            </div>
+        }
+        else
+        {
+            <h3 style="color:darkgreen">Su legajo no posee privilegios suficientes para acceder a esta informacion.</h3>
+        }
+
+
+    }
+
+}
+
+
+
+
+
+<div id="dialog1" style="display: none"></div>
+
+<div id="spinner2" style="display:none;">
+    <span class="blink_me">Cargando. Por favor espere.</span>
+    <br />
+    <br />
+    <img id="img-spinner" src="~/Content/images/specialloader/ajax-loader.gif" alt="Loading" />
+</div>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.9/jquery-ui.js" type="text/javascript"></script>
+<script src="~/Scripts/DataTables/jquery.dataTables.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+        setTimeout(closeModal, 6000);
+        $(window).on('load', function () {
+            $('#spinner2').show();
+            //lblUserWebName
+            //var testlbl = document.getElementById('lblUserWebName').innerHTML;
+            //alert('Actual LBL: ' + testlbl);
+            var someStringValue = '@(ViewBag.Genio)';
+            //alert('NUEVA LBL: ' + someStringValue);
+            document.getElementById('lblUserWebName').innerHTML = 'Bienvenido ' + someStringValue;
+        });
+        function closeModal()
+        {
+            $('#spinner2').hide();
+        }
+        function blinker2() {
+            $('.blink_me').fadeOut(500);
+            $('.blink_me').fadeIn(500);
+        }
+        setInterval(blinker2, 1000);
+</script>
+<script src="~/Scripts/lightbox/lightbox.js" type="text/javascript"></script>
+<script src="~/Scripts/footable/footable.js" type="text/javascript"></script>
+<script src="~/Scripts/table2excel/jquery.table2excel.js"></script>
+<script type="text/javascript">
+    function blinker() {
+        $('.blink_me').fadeOut(500);
+        $('.blink_me').fadeIn(500);
+    }
+    setInterval(blinker, 1000);
+    jQuery(function ($) {
+        //$('.table').footable();
+        $('.table').footable(
+            //{
+            //    "paging": {
+            //        "size":15
+            //    }
+            //}
+        );
+    });
+
+    function ChangeCursor5() {
+        document.getElementById("spnSearch").style.cursor = "pointer";
+        return false;
+    }
+
+
+    $("tr").click(function () {
+        $(this).addClass("selected").siblings().removeClass("selected");
+    });
+
+    var table = $('#CustomerGrid').dataTable({
+        "paging": false,
+        "ordering": false,
+        "info": false,
+        "searching": false
+    });
+
+    $('#donwloadExcel').on('click', function () {
+
+        //******* Obtener Fecha y hora actual, agregar al nombre del archivo
+        var nombreplanilla = "";
+        var today = new Date();
+        var dd = today.getDate();
+        var mm = today.getMonth() + 1; //January is 0!
+        var yyyy = today.getFullYear();
+
+        var seconds = today.getSeconds();
+        var minutes = today.getMinutes();
+        var hour = today.getHours();
+
+
+        if (dd < 10) {
+            dd = '0' + dd
+        }
+
+        if (mm < 10) {
+            mm = '0' + mm
+        }
+
+        today = dd + '/' + mm + '/' + yyyy + ' ' + hour + ':' + minutes + ':' + seconds;
+        //**** FIN Obtener Fecha y hora actual, agregar al nombre del archivo
+
+        $('<table>').append(table.$('tr').clone()).table2excel({
+                             // exclude CSS class
+                            exclude: ".noExl",        
+                            name: "Worksheet Name",    
+                            filename: "SomeFile" //do not include extension
+                            //exclude: ".noExl",
+                            //name: "Excel Document Name",
+                            //filename: "InformeSVP_" + today,
+                            //fileext: ".xls",
+                            //exclude_img: true,
+                            //exclude_links: true,
+                            //exclude_inputs: true
+            });
+    });
+
+
+    //$('#CustomerGrid').dataTable({
+    //    "paging": false,
+    //    "ordering": false,
+    //    "info": false,
+    //    "searching": false
+    //});
+
+    function getDetalleIncidenciasByEstado(EstadoDescripcion) {
+        //alert(EstadoDescripcion);
+        FilterData = {}
+        FilterData["Descripcion"] = EstadoDescripcion;
+
+        $.ajax({
+            //url: "/Home/getDetalleIncidenciasByEstado",
+            url: "@(Url.Action("getDetalleIncidenciasByEstado", "Home"))",
+            type: "GET",
+            data: JSON.stringify({ _EstadoDescripcion: FilterData }),
+            dataType: "json",
+            //traditional: true,
+            contentType: "application/json; charset=utf-8",
+            //cache: false,
+
+            success: function (response) {
+                //alert(response.data);
+                //$('#CustomerGrid').html('<table id="table-output" class="display" cellspacing="0" width="100%"></table>');
+
+                //table_config.columns = response.columns;
+
+                //var table = $('#table-output');//.DataTable(table_config);
+                //table.clear();
+                //$('#CustomerGrid').rows.add(response.data);
+                //$('#CustomerGrid').draw();
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                alert(textStatus + " " + errorThrown);
+            }
+        });
+    }
+
+    $('#btnExportar').on('click', function () {
+        alert("AVISO: Este boton solamente exporta la grilla actual. Si desea exportar el resultado de un filtro, primero debe seleccionarlo y hacer click en 'Filtrar' .");
+    });
+
+
+    //************** SECCION FILTROS  **************
+
+    function guardarfiltroEstado(valor) {
+        document.getElementById("filtroEstado").value = valor;
+
+        return false;
+    }
+    function guardarfiltroUMovil(valor) {
+        document.getElementById("filtroUMovil").value = valor;
+
+        return false;
+    }
+    function guardarfiltroZona(valor) {
+        document.getElementById("filtroZona").value = valor;
+
+        return false;
+    }
+
+
+    function guardarValorFiltroFechaDesde(valor) {
+        document.getElementById("fechaDesde").value = valor;
+        return false;
+    }
+
+    function guardarValorFiltroFechaHasta(valor) {
+        document.getElementById("fechaHasta").value = valor;
+        return false;
+    }
+
+
+    function Validarfiltrar() {
+
+        var fini = $("#fechaInicio").val();
+        var ffin = $("#fechaFin").val();
+
+        if (fini != "" && ffin != "") {
+
+            var startDate = new Date(fini);
+            var endDate = new Date(ffin);
+
+            if (startDate > endDate) {
+                alert("ERROR: Fecha inicio debe ser menor a Fecha fin.");
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    //************** FIN SECCION FILTROS  **************
+
+    $(function () {
+        $("#fechaInicio").datepicker({ dateFormat: 'yy-mm-dd' }).val();
+    });
+
+    $(function () {
+        $("#fechaFin").datepicker({ dateFormat: 'yy-mm-dd' }).val();
+     
+    });
+
+    $(function () {
+        $("#dialog1").dialog({
+            autoOpen: false,
+            modal: true,
+            width: 650,
+            height: 410,
+            title: "Galeria de Fotos",
+            draggable: false,
+            resizable: false
+        });
+
+        $("#CustomerGrid .details").click(function () {
+            //var loading2 = $(".loading");
+            //ShowProgress();
+            $('#spinner').show();
+
+            var incidenciaId = $(this).closest("tr").find("td").eq(0).html();
+            //alert('IncidenciaID en tr td eq(0): ' + incidenciaId);
+
+            $.ajax({
+                type: "POST",
+                url: "/Home/Details",
+                data: '{incidenciaId: "' + incidenciaId + '" }',
+                contentType: "application/json; charset=utf-8",
+                dataType: "html",
+                success: function (response) {
+                    $('#dialog1').html(response);
+                    $('#dialog1').dialog('open');
+                    $('#spinner').hide();
+                    //loading.hide();
+                    //$("#progressbar").hide();
+
+                },
+                failure: function (response) {
+                    //loading.hide();
+                    //$('#spinner').hide();
+                    alert(response.responseText);
+
+                },
+                error: function (response) {
+                    //loading.hide();
+                    $('#spinner').hide();
+                    alert(response.responseText);
+                }
+            });
+        });
+    });
+</script>

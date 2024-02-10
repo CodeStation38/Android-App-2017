@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Good default declaration:
+        * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+        * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+        * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+            * Enable inline JS: add 'unsafe-inline' to default-src
+            * Enable eval(): add 'unsafe-eval' to default-src
+    -->  
+    <!--GPS FULL-->
+    <!--<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-inline' 'unsafe-eval'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; media-src *;script-src 'self' http://movil.demo.com.ar:9911/*  https://*.googleapis.com 'unsafe-inline' 'unsafe-eval'; connect-src http://movil.demo.com.ar:9911/user/CrearIncidencia https://*.googleapis.com">-->
+    <!--REGISTRACION-->  
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-inline' 'unsafe-eval'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; media-src *;script-src 'self' http://movil.demo.com.ar:9911/*  https://*.googleapis.com 'unsafe-inline' 'unsafe-eval'; connect-src http://movil.demo.com.ar:9911/user/CrearIncidencia http://movil.demo.com.ar:9911/user/CrearUsuarioMovil http://movil.demo.com.ar:9911/user/ConfigurarNuevoMovil http://movil.demo.com.ar:9911/user/LoginUserSVPMovil https://*.googleapis.com">
+    
+      <!-- Allow everything but only from the same origin and foo.com -->
+    <!--<meta http-equiv="Content-Security-Policy" content="default-src 'self' foo.com">-->
+    <!-- This policy allows everything (eg CSS, AJAX, object, frame, media, etc) except that
+        * CSS only from the same origin and inline styles,
+        * scripts only from the same origin and inline styles, and eval()
+    -->
+    <!--GPS FULL-->
+    <!--<meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; connect-src http://movil.demo.com.ar:9911/user/CrearIncidencia https://*.googleapis.com">-->
+    <!--REGISTRACION-->
+    <!--https://*.googleapis.com-->
+        <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; connect-src http://movil.demo.com.ar:9911/user/CrearIncidencia http://movil.demo.com.ar:9911/user/CrearUsuarioMovil http://movil.demo.com.ar:9911/user/ConfigurarNuevoMovil http://movil.demo.com.ar:9911/user/LoginUserSVPMovil https://*.googleapis.com">
+
+
+    <!-- Allows XHRs only over HTTPS on the same domain. -->
+    <!--<meta http-equiv="Content-Security-Policy" content="default-src 'self' https:">-->
+    <!-- Allow iframe to https://cordova.apache.org/ -->
+    <!--GPS FULL-->
+    <!--<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; frame-src 'self' https://cordova.apache.org; connect-src http://movil.demo.com.ar:9911/user/CrearIncidencia https://*.googleapis.com">-->
+    <!--REGISTRACION-->  
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; frame-src 'self' https://cordova.apache.org; connect-src http://movil.demo.com.ar:9911/user/CrearIncidencia http://movil.demo.com.ar:9911/user/CrearUsuarioMovil http://movil.demo.com.ar:9911/user/ConfigurarNuevoMovil http://movil.demo.com.ar:9911/user/LoginUserSVPMovil https://*.googleapis.com">
+
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+    <link rel="stylesheet" href="css/jquery.mobile.structure-1.4.5.min.css" />
+    <link rel="stylesheet" href="css/themes/lightBGFIX4.min.css"/>
+    <link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <title>SVPMovil</title>
+</head>
+<body>
+    <div id="Registrar-page" data-role="page" data-theme="a" class="not-displayed">
+        <div data-role="header" data-tap-toggle="false" data-position="fixed" class="alignlogo">
+            <div class="imgalignlogo">
+                <img src="images/logoverdepng2.png" class="logoheader" />
+            </div>
+        </div>
+        <div data-role="content" data-theme="a">
+            <h3 align="center">Ingreso primera vez</h3>
+
+            <label>Nombre (Obligatorio):</label>
+            <input id="svpNombre" name="svpNombre" placeholder="e.g. Juan"/>
+
+            <label>Apellido (Obligatorio):</label>
+            <input id="svpSurname" name="svpSurname" placeholder="e.g. Perez" />
+
+            <label>Numero de Legajo (Obligatorio):</label>
+            <input type="number" id="svpNumLegajo" name="svpNumLegajo" />
+
+            <label>Contrasenia (Obligatorio):</label>
+            <input type="password" id="svpContasenia" />
+
+            <label>Registracion usuario primera vez</label>
+            <a href="#" id="btnRegistrar" data-transition="fade" data-role="button">Registrar</a>
+            <label>Salir de la aplicacion y cerrarla.</label>
+            <button id="btnSalir" data-role="button">Salir</button>
+            <div id="error-msg" class="not-displayed">
+            </div>
+        </div>
+        <footer data-role="footer" data-tap-toggle="false" data-position="fixed" class="alignlogo">
+            <div class="imgalignlogo">
+                <img src="images/LOGOdemoFOOT2.png" class="logoheader" />
+            </div>
+        </footer>
+    </div>
+    <div id="RegUsuarioProgressBar-page" data-role="page" data-theme="a" class="not-displayed">
+        <div data-role="header" data-tap-toggle="false" data-position="fixed" class="alignlogo">
+            <div class="imgalignlogo">
+                <img src="images/logoverdepng2.png" class="logoheader" />
+            </div>
+        </div>
+        <div data-role="content" data-theme="a">
+            <h2>Se recomienda no cerrar la aplicacion, ni interrumpir la conexion a internet, en este momento.</h2>
+            <h2>Aguarde mientras procesamos su solicitud de registracion.</h2>
+            <div id="dvProgressBarFotos" data-position="fixed">
+                <img src="images/edemov2.gif" class="imgalignloader" />
+            </div>
+        </div>
+    </div>
+
+
+    <div id="ReinsMismoTelefono-page" data-role="page" data-theme="a" class="not-displayed">
+        <div data-role="header" data-tap-toggle="false" data-position="fixed" class="alignlogo">
+            <div class="imgalignlogo">
+                <img src="images/logoverdepng2.png" class="logoheader" />
+            </div>
+        </div>
+        <div data-role="content" data-theme="a">
+            <h2>Esta a punto de reinstalar la aplicacion en su telefono ya registrado.</h2>
+             Proceder a reinstalar la app.
+            <a href="#" id="btnReinsMismoTel" data-transition="fade" data-role="button">Reinstalar</a>
+        </div>
+        <footer data-role="footer" data-tap-toggle="false" data-position="fixed" class="alignlogo">
+            <div class="imgalignlogo">
+                <img src="images/LOGOdemoFOOT2.png" class="logoheader" />
+            </div>
+        </footer>
+    </div>
+    <div id="ExitoInstMismoTelefono-page" data-role="page" data-theme="a" class="not-displayed">
+        <div data-role="header" data-tap-toggle="false" data-position="fixed" class="alignlogo">
+            <div class="imgalignlogo">
+                <img src="images/logoverdepng2.png" class="logoheader" />
+            </div>
+        </div>
+        <div data-role="content" data-theme="a">
+            <h2>Ha instalado con exito la aplicacion, en su telefono ya registrado.</h2>
+            Comenzar a utilizar la aplicacion.
+            <a href="#" id="btnExitoMismoTelefono" data-transition="fade" data-role="button">Continuar</a>
+        </div>
+        <footer data-role="footer" data-tap-toggle="false" data-position="fixed" class="alignlogo">
+            <div class="imgalignlogo">
+                <img src="images/LOGOdemoFOOT2.png" class="logoheader" />
+            </div>
+        </footer>
+    </div>
+
+
+    <div id="ReinsNuevoTelefono-page" data-role="page" data-theme="a" class="not-displayed">
+        <div data-role="header" data-tap-toggle="false" data-position="fixed" class="alignlogo">
+            <!--<h1 id="app-title">demo - SVP</h1>-->
+            <div class="imgalignlogo">
+                <img src="images/logoverdepng2.png" class="logoheader" />
+            </div>
+        </div>
+        <div data-role="content" data-theme="a">
+            <h3 align="center">Nuevo Telefono detectado</h3>
+            <h2>Solamente puede asociar un unico telefono a su legajo ya registrado. Desea establecer su nuevo telefono como unico dispositivo asociado a su legajo?</h2>
+            <label>No instalar la aplicacion en el nuevo telefono.</label>
+            <a href="#" id="btnOmitirNuevoTelefono" data-transition="fade" data-role="button">No instalar</a>
+            <label>Asociar nuevo telefono a su legajo</label>
+            <a href="#" id="btnAsociarNuevoTel" data-transition="fade" data-role="button">Instalar Nuevo Telefono</a>
+        </div>
+    </div>
+    <div id="RechazaNuevoTelefono-page" data-role="page" data-theme="a" class="not-displayed">
+        <div data-role="header" data-tap-toggle="false" data-position="fixed" class="alignlogo">
+            <div class="imgalignlogo">
+                <img src="images/logoverdepng2.png" class="logoheader" />
+            </div>
+        </div>
+        <div data-role="content" data-theme="a">
+            <h2>Ha decidido no instalar la aplicacion en este nuevo telefono.</h2>
+            Salir del instalador.
+            <a href="#" id="btnSalirRechNuevoTel" data-transition="fade" data-role="button">Salir</a>
+        </div>
+        <footer data-role="footer" data-tap-toggle="false" data-position="fixed" class="alignlogo">
+            <div class="imgalignlogo">
+                <img src="images/LOGOdemoFOOT2.png" class="logoheader" />
+            </div>
+        </footer>
+    </div>
+    <div id="ExitoInstNuevoTelefono-page" data-role="page" data-theme="a" class="not-displayed">
+        <div data-role="header" data-tap-toggle="false" data-position="fixed" class="alignlogo">
+            <div class="imgalignlogo">
+                <img src="images/logoverdepng2.png" class="logoheader" />
+            </div>
+        </div>
+        <div data-role="content" data-theme="a">
+            <h2>Ha instalado con exito la aplicacion, en su nuevo telefono.</h2>
+            Comenzar a utilizar la aplicacion.
+            <a href="#" id="btnExitoNuevoTelefono" data-transition="fade" data-role="button">Continuar</a>
+        </div>
+        <footer data-role="footer" data-tap-toggle="false" data-position="fixed" class="alignlogo">
+            <div class="imgalignlogo">
+                <img src="images/LOGOdemoFOOT2.png" class="logoheader" />
+            </div>
+        </footer>
+    </div>
+
+
+    <div id="ErrorLocal-page" data-role="page" data-theme="a" class="not-displayed">
+        <div data-role="header" data-tap-toggle="false" data-position="fixed" class="alignlogo">
+            <div class="imgalignlogo">
+                <img src="images/logoverdepng2.png" class="logoheader" />
+            </div>
+        </div>
+        <div data-role="content" data-theme="a">
+            <h2 id="txtErrorLocal"></h2>
+            <h2>Visite Preguntas Frecuentes en</h2>
+            <h2>www.demo.com.ar/svp-faq</h2>
+            <button id="btnSalir63" data-role="button">Salir</button>
+        </div>
+        <footer data-role="footer" data-tap-toggle="false" data-position="fixed" class="alignlogo">
+            <div class="imgalignlogo">
+                <img src="images/LOGOdemoFOOT2.png" class="logoheader" />
+            </div>
+        </footer>
+    </div>
+    <div id="Bienvenida-page" data-role="page" data-theme="a" class="not-displayed">
+        <div data-role="header" data-tap-toggle="false" data-position="fixed" class="alignlogo">
+            <div class="imgalignlogo">
+                <img src="images/logoverdepng2.png" class="logoheader" />
+            </div>
+        </div>
+        <div data-role="content" data-theme="a">
+            <h2>Bienvenido</h2>
+
+            <label>Ingrese su Contrasenia:</label>
+            <input id="svpContaseniaLogin" name="svpContaseniaLogin" placeholder="e.g. password" />
+            Comenzar a utilizar la aplicacion movil.
+            <a href="#" id="btnLogin" data-transition="fade" data-role="button">Ingresar</a>
+            Debe recordar el numero de legajo con el que se registro.
+            <a href="#" id="svpPassOlvido" data-transition="fade" data-role="button">Olvide mi contrasenia</a>
+            Salir de la aplicacion y cerrarla.
+            <button id="btnSalirLogin" data-role="button">Salir</button>
+            <div id="error-logintry" class="not-displayed">
+            </div>
+        </div>
+        <footer data-role="footer" data-tap-toggle="false" data-position="fixed" class="alignlogo">
+            <div class="imgalignlogo">
+                <img src="images/LOGOdemoFOOT2.png" class="logoheader" />
+            </div>
+        </footer>
+    </div>
+
+    <div id="OlvidoPass-page" data-role="page" data-theme="a" class="not-displayed">
+        <div data-role="header" data-tap-toggle="false" data-position="fixed" class="alignlogo">
+            <div class="imgalignlogo">
+                <img src="images/logoverdepng2.png" class="logoheader" />
+            </div>
+        </div>
+        <div data-role="content" data-theme="a">
+            <h2>Nueva Contrasenia</h2>
+            <h2>Recuerde que debe tener 10 caracteres como maximo.</h2>
+            <h2>Los 3 primeros deben ser letras y el resto numeros.</h2>
+            <h2>No se admite otra clase de caracter.</h2>
+            <h2>No puede estar en blanco.</h2>
+            <label>Ingrese Numero de Legajo:</label>
+            <input type="text" id="txtVerificaLegajo" />
+            <label>Ingrese Nueva Contrase�a:</label>
+            <input type="text" id="txtNuevoPass" />
+            <label>Confirme nueva Contrasenia:</label>
+            <input type="text" id="txtConfirmNuevoPass" />
+            Confirma que desea cambiar la contrasenia para acceder a la aplicacion.
+            <a href="#" id="btnChangePass" data-transition="fade" data-role="button">Cambiar Contrasenia</a>
+            Salir de la aplicacion y cerrarla.
+            <button id="btnSalirOlvidoPass" data-role="button">Salir</button>
+            <div id="error-msgNuevaPass" class="not-displayed">
+            </div>
+        </div>
+        <footer data-role="footer" data-tap-toggle="false" data-position="fixed" class="alignlogo">
+            <div class="imgalignlogo">
+                <img src="images/LOGOdemoFOOT2.png" class="logoheader" />
+            </div>
+        </footer>
+    </div>
+    <div id="NuevaPassConfirm-page" data-role="page" data-theme="a" class="not-displayed">
+        <div data-role="header" data-tap-toggle="false" data-position="fixed" class="alignlogo">
+            <div class="imgalignlogo">
+                <img src="images/logoverdepng2.png" class="logoheader" />
+            </div>
+        </div>
+        <div data-role="content" data-theme="a">
+            <h2>Nueva contrasenia creada con exito</h2>
+            Puede seguir utilizando la aplicacion movil.
+            <a href="#" id="btnConfirmPass" data-transition="fade" data-role="button">Continuar</a>
+            Salir de la aplicacion y cerrarla.
+            <button id="btnConfirmPassContinue" data-role="button">Salir</button>
+        </div>
+        <footer data-role="footer" data-tap-toggle="false" data-position="fixed" class="alignlogo">
+            <div class="imgalignlogo">
+                <img src="images/LOGOdemoFOOT2.png" class="logoheader" />
+            </div>
+        </footer>
+    </div>
+
+    <div id="Foto-page" data-role="page" data-theme="a" class="not-displayed">
+        <div data-role="header" data-tap-toggle="false" data-position="fixed" class="alignlogo">
+            <div class="imgalignlogo">
+                <img src="images/logoverdepng2.png" class="logoheader" />
+            </div>
+        </div>
+        <div data-role="content" data-theme="a">
+            <h3 align="center">Detalles del incidente</h3>
+
+            <label>Descripcion:</label>
+            <textarea id="svpDetIncidente" rows="3" class="textStyle"></textarea>
+
+            <h3>Camara</h3>
+
+            <button id="btnTomarFoto" data-role="button">Tomar foto</button>
+
+            <!-- primera foto -->
+            <div id="thephoto1"></div>
+
+            <!-- segunda foto -->
+            <div id="thephoto2"></div>
+
+            <!-- tercera foto -->
+            <div id="thephoto3"></div>
+
+            <!-- cuarta foto -->
+            <div id="thephoto4"></div>
+
+            <label>Completar datos domicilio.</label>
+            <a href="#" id="btnDomicilio" data-transition="fade" data-role="button">Continuar</a>
+            <label>Salir de la aplicacion.</label>
+            <button id="btnSalir2" data-role="button">Salir</button>
+        </div>
+    </div>
+    <div id="Domicilio-page" data-role="page" data-theme="a" class="not-displayed">
+        <div data-role="header" data-tap-toggle="false" data-position="fixed" class="alignlogo">
+            <div class="imgalignlogo">
+                <img src="images/logoverdepng2.png" class="logoheader" />
+            </div>
+        </div>
+        <div data-role="content" data-theme="a">
+            <div id="msgUbicacionProgressBar" class="not-displayed">
+                <h2>Obteniendo datos de ubicacion.</h2>
+                <div id="dvProgressBarFotos" data-position="fixed">
+                    <img src="images/edemov2.gif" class="imgalignloader" />
+                </div>
+            </div>
+            <div id="pnlGPS" class="not-displayed">
+                <h3 align="center">Resumen incidencia</h3>
+                <h2 id="hCurrentDate"></h2>
+                <h2 id="hEnvioNFotos"></h2>
+                <h2 id="hDescripcion"></h2>
+                <h2>Domicilio sito en</h2>
+                <h2 id="hCalle"></h2>
+                <h2 id="hAltura"></h2>
+                <h2 id="hLocalidad"></h2>
+            </div>
+            <div id="pnlDomicilio" class="not-displayed">
+                <h3 align="center">Ubicacion de incidencia</h3>
+                <label>Calle (Obligatorio):</label>
+                <input id="svpUbCalle" name="svpUbCalle" placeholder="e.g. Araoz" />
+
+                <label>Altura (Obligatorio):</label>
+                <input type="number" id="svpUbAltura" name="svpUbAltura" placeholder="e.g. 2485" />
+
+                <label>Localidad (Obligatorio):</label>
+                <input id="svpUbLocalidad" name="svpLocalidad" placeholder="e.g. Lanus" />
+            </div>
+            <label>Crear incidencia.</label>
+            <a href="#" id="btnFotoYEnviar" class = "ui-btn ui-state-disabled" data-transition="fade" data-role="button">Enviar</a>
+            <div id="error-msgDomicilio" class="not-displayed">
+            </div>
+        </div>
+        <footer data-role="footer" data-tap-toggle="false" data-position="fixed" class="alignlogo">
+            <div class="imgalignlogo">
+                <img src="images/LOGOdemoFOOT2.png" class="logoheader" />
+            </div>
+        </footer>
+    </div>
+
+
+    <div id="GPS-page" data-role="page" data-theme="a" class="not-displayed">
+        <div data-role="header" data-tap-toggle="false" data-position="fixed" class="alignlogo">
+            <!--<h1 id="app-title">demo - SVP</h1>-->
+            <div class="imgalignlogo">
+                <img src="images/logoverdepng2.png" class="logoheader" />
+            </div>
+        </div>
+        <div data-role="content" data-theme="a">
+            <h3 align="center">GPS y Localizacion</h3>
+            <h2>Para tener una mejor experiencia recomendamos tener activado el GPS, desea activarlo ahora?</h2>
+            <label>Ingresar domicilio en forma manual.</label>
+            <a href="#" id="btnOmitirGPS" data-transition="fade" data-role="button">Omitir GPS</a>
+            <label>Activacion de GPS.</label>
+            <a href="#" id="btnActivarGPS" data-transition="fade" data-role="button">Activar GPS</a>
+            <label>Salir de la aplicacion.</label>
+            <button id="btnSalirGPS" data-role="button">Salir</button>
+        </div>
+    </div>
+
+
+    <div id="EnvioFotosProgressBar-page" data-role="page" data-theme="a" class="not-displayed">
+        <div data-role="header" data-tap-toggle="false" data-position="fixed" class="alignlogo">
+            <div class="imgalignlogo">
+                <img src="images/logoverdepng2.png" class="logoheader" />
+            </div>
+        </div>
+        <div data-role="content" data-theme="a">
+            <h2>Se recomienda no cerrar la aplicacion, ni interrumpir la conexion a internet, en este momento.</h2>
+            <h2>Por favor espere mientras procesamos su incidencia.</h2>
+            <div id="dvProgressBarFotos" data-position="fixed">
+                <img src="images/edemov2.gif" class="imgalignloader" />
+            </div>
+        </div>
+    </div>
+    <div id="EnvNuevoIncidente-page" data-role="page" data-theme="a" class="not-displayed">
+        <div data-role="header" data-tap-toggle="false" data-position="fixed" class="alignlogo">
+            <div class="imgalignlogo">
+                <img src="images/logoverdepng2.png" class="logoheader" />
+            </div>
+        </div>
+        <div data-role="content" data-theme="a">
+            <h2 id="txtNuevaIncidencia"></h2>
+            <h2>Por consultas y reclamos comuniquese al 0-810-9999</h2>
+            <button id="btnSalir4" data-role="button">Salir</button>
+        </div>
+        <footer data-role="footer" data-tap-toggle="false" data-position="fixed" class="alignlogo">
+            <div class="imgalignlogo">
+                <img src="images/LOGOdemoFOOT2.png" class="logoheader" />
+            </div>
+        </footer>
+    </div>
+    <div id="ErrorNuevoIncidente-page" data-role="page" data-theme="a" class="not-displayed">
+        <div data-role="header" data-tap-toggle="false" data-position="fixed" class="alignlogo">
+            <div class="imgalignlogo">
+                <img src="images/logoverdepng2.png" class="logoheader" />
+            </div>
+        </div>
+        <div data-role="content" data-theme="a">
+            <h2>No es posible registrar su incidencia en este momento.</h2>
+            <h2>Muchas gracias por utilizar nuestros servicios.</h2>
+            <button id="btnSalir5" data-role="button">Salir</button>
+        </div>
+        <footer data-role="footer" data-tap-toggle="false" data-position="fixed" class="alignlogo">
+            <div class="imgalignlogo">
+                <img src="images/LOGOdemoFOOT2.png" class="logoheader" />
+            </div>
+        </footer>
+    </div>
+    <div id="LegajoError-page" data-role="page" data-theme="a" class="not-displayed">
+        <div data-role="header" data-tap-toggle="false" data-position="fixed" class="alignlogo">
+            <div class="imgalignlogo">
+                <img src="images/logoverdepng2.png" class="logoheader" />
+            </div>
+        </div>
+        <div data-role="content" data-theme="a">
+            <h2 id="txtErrorLegajo"></h2>
+            <button id="btnSalir6" data-role="button">Salir</button>
+        </div>
+        <footer data-role="footer" data-tap-toggle="false" data-position="fixed" class="alignlogo">
+            <div class="imgalignlogo">
+                <img src="images/LOGOdemoFOOT2.png" class="logoheader" />
+            </div>
+        </footer>
+    </div>
+    <script src="scripts/jquery-2.2.4.min.js"></script>
+    <script src="scripts/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="scripts/platformOverrides.js"></script>
+    <script src="scripts/svpmovil.js"></script>
+    <script type="text/javascript" src="scripts/index.js"></script>
+</body>
+</html>
